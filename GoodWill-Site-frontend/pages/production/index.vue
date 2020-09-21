@@ -1,11 +1,10 @@
 <template>
-  <v-card :elevation="24 - 1" class="production">
+  <v-card :elevation="6-1" class="production">
     <v-tabs
       v-model="tab"
       background-color="transparent"
       grow>
       <v-tab
-        :elevation="24 - 1"
         v-for="item in blocks"
         :key="item.tab">
         {{ item.tab }}
@@ -18,10 +17,11 @@
         v-for="item in blocks"
         :key="item.content">
         <v-card
-          class="imageContent">
+          flat
+          class="imageContent fill-height">
           <v-img width="40vw" :src="item.content"></v-img>
         </v-card>
-        <v-card v-text="item.text" class="contentText">
+        <v-card flat v-text="item.text" class="contentText">
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -128,24 +128,28 @@ export default {
 .production {
   @include size-window;
 
+  .tabsItem {
+    font-size: 14px;
+  }
+
   .content {
     display: flex;
     text-align: justify;
     margin-right: 1vw;
     margin-top: 1vh;
     margin-left: 1vw;
+    font-size: 14px;
+
+    .imageContent {
+      background-color: white;
+      width: 40%;
+    }
 
     .contentText {
       margin-left: 1vw;
     }
   }
 
-  .tabs {
-    margin: 0 auto;
-  }
 
-  .imageContent {
-    background-color: white;
-  }
 }
 </style>

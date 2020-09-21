@@ -1,12 +1,16 @@
 <template>
   <v-app>
-    <v-card app light>
-      <menuBar/>
-      <breadcrumbs/>
-      <v-main app class="mainPadding">
-        <nuxt/>
-      </v-main>
-      <footerSite/>
+    <v-card app light class="siteWrapper">
+      <v-row align="start" justify="center" class="fill-height">
+        <v-col cols="12" lg="8" class="fill-height">
+          <menuBar/>
+          <breadcrumbs/>
+          <v-main app class="mainPadding">
+            <nuxt/>
+          </v-main>
+          <footerSite/>
+        </v-col>
+      </v-row>
     </v-card>
   </v-app>
 </template>
@@ -26,7 +30,11 @@ export default {
 </script>
 
 <style lang="scss">
-.mainPadding{
-  padding-top: 0 !important;
-}
+  .siteWrapper {
+
+    .mainPadding {
+      padding-top: 0 !important;
+    }
+  }
+
 </style>

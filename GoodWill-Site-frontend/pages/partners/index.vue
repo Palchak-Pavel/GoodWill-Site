@@ -1,5 +1,5 @@
 <template>
-  <v-card class="partnersWrap" ><h1>Partners</h1></v-card>
+  <v-card :elevation="6-1" class="partnersWrap" ><h1>Partners</h1></v-card>
 </template>
 
 <script>

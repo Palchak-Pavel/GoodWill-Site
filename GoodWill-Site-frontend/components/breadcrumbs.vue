@@ -1,5 +1,5 @@
 <template>
-  <v-card  class="breadcrumbsWrapp" flat>
+  <v-card  class="breadcrumbsWrapp">
     <v-breadcrumbs  :items="items" class="breadcrumbs"></v-breadcrumbs>
   </v-card>
 </template>
@@ -34,7 +34,6 @@ name: "breadcrumbs",
   display: flex;
   align-items: center;
   height:40px;
-  margin-top: 60px;
   .breadcrumbs{
 
   }

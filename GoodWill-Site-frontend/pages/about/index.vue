@@ -1,5 +1,5 @@
 <template>
-  <v-card class="wrapper" flat>
+  <v-card class="wrapper" :elevation="6-1">
     <v-card-title class="aboutWrap">
       <h2>О компании</h2>
       <v-card-text class="infoCompany">
@@ -46,7 +46,7 @@ export default {
   p{
     text-align: justify;
     margin: 20px 30px 20px 30px;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.3;
   }
 }

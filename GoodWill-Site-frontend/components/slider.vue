@@ -40,8 +40,8 @@ export default {
 
 <style scoped>
 .slider{
-  max-height:500px;
-  width: 85%;
+  max-height:300px;
+  width: 60%;
   margin: 0 auto;
 }
 

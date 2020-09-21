@@ -1,56 +1,56 @@
 <template>
-  <v-card>
-    <v-footer
-      dark
-      padless
-      class="footerWrap">
-      <v-card
-        color="indigo darken-4"
-        flat
-        tile
-        class="upperFooter">
-        <v-card color="indigo darken-4" class="partners" flat>
-          <v-card color="indigo darken-4" class="phone" flat>
-            <p>+7 495 651-0958</p>
-            <p>+7 495 662-8429</p>
-            <v-card flat class="writeLetter">
-              <write_a_letter/>
+  <v-card :elevation="6-1" class="rounded-b-lg">
+      <v-footer
+        light
+        padless
+        class="footerWrap">
+        <v-card
+          color="indigo darken-4"
+          flat
+          tile
+          class="upperFooter rounded-0" >
+          <v-card color="indigo darken-4" class="partners" flat>
+            <v-card dark color="indigo darken-4" class="phone" flat>
+              <p>+7 495 651-0958</p>
+              <p>+7 495 662-8429</p>
+              <v-card flat class="writeLetter">
+                <write_a_letter/>
+              </v-card>
             </v-card>
-          </v-card>
 
-          <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
 
-          <v-card flat color="indigo darken-4" class="tecalliance">
-            <a href="https://www.tecalliance.net/en/" target="_blank">
-              <v-img :src="tecalliance.tecalliance"></v-img>
-            </a>
-          </v-card>
-          <v-card flat color="indigo darken-4" class="drive2YoutubeIinstagramm">
-            <a href="https://www.drive2.ru/o/goodwillsocial" target="_blank">
-              <v-img :src="drive2.drive2"></v-img>
-            </a>
-          </v-card>
-          <v-card flat color="indigo darken-4" class="drive2YoutubeIinstagramm">
-            <a href="https://www.youtube.com/channel/UCXrehcqVbuxLYxV1ejm3sXg?view_as=subscriber" target="_blank">
-              <v-img :src="youtube.youtube"></v-img>
-            </a>
-          </v-card>
-          <v-card flat color="indigo darken-4" class="drive2YoutubeIinstagramm">
-            <a href="https://www.instagram.com/goodwill.social/?hl=ru" target="_blank">
-              <v-img :src="instagramm.instagramm"></v-img>
-            </a>
+            <v-card flat color="indigo darken-4" class="tecalliance">
+              <a href="https://www.tecalliance.net/en/" target="_blank">
+                <v-img :src="tecalliance.tecalliance"></v-img>
+              </a>
+            </v-card>
+            <v-card flat color="indigo darken-4" class="drive2YoutubeIinstagramm">
+              <a href="https://www.drive2.ru/o/goodwillsocial" target="_blank">
+                <v-img :src="drive2.drive2"></v-img>
+              </a>
+            </v-card>
+            <v-card flat color="indigo darken-4" class="drive2YoutubeIinstagramm">
+              <a href="https://www.youtube.com/channel/UCXrehcqVbuxLYxV1ejm3sXg?view_as=subscriber" target="_blank">
+                <v-img :src="youtube.youtube"></v-img>
+              </a>
+            </v-card>
+            <v-card flat color="indigo darken-4" class="drive2YoutubeIinstagramm">
+              <a href="https://www.instagram.com/goodwill.social/?hl=ru" target="_blank">
+                <v-img :src="instagramm.instagramm"></v-img>
+              </a>
+            </v-card>
+
           </v-card>
 
         </v-card>
 
-      </v-card>
+        <v-divider></v-divider>
 
-      <v-divider></v-divider>
-
-      <v-card class="bottomFooter">
-        <p> GoodWill®</p>
-      </v-card>
-    </v-footer>
+        <v-card class="bottomFooter rounded-b-lg">
+          <p> GoodWill®</p>
+        </v-card>
+      </v-footer>
   </v-card>
 </template>
 
@@ -79,6 +79,9 @@ export default {
 }
 </script>
 <style lang="scss">
+.v-sheet.v-card{
+  border-radius: 0;
+}
 .footerWrap {
   .upperFooter {
     width: 100%;
