@@ -3,20 +3,22 @@
     <v-container>
       <slider/>
     </v-container>
-    <v-row>
-      <v-col
-        md="5"
-        sm="10"
-        xs="10"
-        v-for="newTitle of news.slice(0,8)"
-        :key="newTitle.title"
-        class="newsCard">
-        <h4> {{ newTitle.title }} </h4>
-        <v-banner class="cardDescription">
-          {{ newTitle.description }}
-        </v-banner>
-      </v-col>
-    </v-row>
+    <router-link class="linkNewsDetailed" :to="newsDetailed.href">
+      <v-row>
+        <v-col
+          md="5"
+          sm="10"
+          xs="10"
+          v-for="newTitle of news.slice(0,8)"
+          :key="newTitle.title"
+          class="newsCard">
+          <h4> {{ newTitle.title }} </h4>
+          <v-banner class="cardDescription">
+            {{ newTitle.description }}
+          </v-banner>
+        </v-col>
+      </v-row>
+    </router-link>
   </v-card>
 </template>
 
@@ -27,6 +29,9 @@ export default {
   name: "home",
   data() {
     return {
+      newsDetailed: {
+        href: '/news/news_details/_id',
+      },
       news: [
         {
           id: 1,
@@ -82,14 +87,18 @@ export default {
 .homeWrap {
   @include size-window;
 
-  .newsCard {
-    .cardDescription {
-      margin: 5px;
+  .linkNewsDetailed {
+    text-decoration: none;
+    .newsCard {
+      color: $colorCorporate;
+      .cardDescription {
+        margin: 5px;
+      }
+
+      margin: 0 auto;
+      padding: 5px;
+
     }
-
-    margin: 0 auto;
-    padding: 5px;
-
   }
 }
 </style>

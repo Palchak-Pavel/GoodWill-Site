@@ -17,9 +17,7 @@
         <h3>Время работы:</h3>
         <h3>Понедельник - пятница: 09:00-18:00</h3>
       </v-card>
-      <v-card flat class="writeLetter">
-        <write_a_letter/>
-      </v-card>
+
       <v-card flat class="productInCity">
         <p>Ищите продукцию GoodWill® в своем городе?</p>
         <p>Ознакомьтесь с разделом <a>ПАРТНЕРЫ</a></p>
@@ -62,14 +60,8 @@ export default {
     margin-bottom: 5px;
   }
 
-  .writeLetter {
-    max-width: 15vw;
-    margin-left: 1vw;
-    margin-top: 1vw;
-  }
-
   .divider {
-    max-width: 35vw;
+    max-width: 25vw;
   }
 
   .contactAddress {

@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-dialog light v-model="dialog" max-width="50vw">
-      <template v-slot:activator="{ on, attrs }" >
+      <template v-slot:activator="{ on, attrs }">
         <v-btn
           elevation="5"
           small
@@ -66,7 +66,6 @@ export default {
 <style lang="scss">
 .letterBtn {
   width: 140px;
-  color: $colorCorporate;
-
+  color: $colorCorporate !important;
 }
 </style>

@@ -1,31 +1,38 @@
 <template>
-  <v-card :elevation="6-1" class="production">
-    <v-tabs
-      v-model="tab"
-      background-color="transparent"
-      grow>
-      <v-tab
-        v-for="item in blocks"
-        :key="item.tab">
-        {{ item.tab }}
-      </v-tab>
-    </v-tabs>
+  <v-app>
+    <v-card app :elevation="6-1" class="production">
+      <v-tabs
+        v-model="tab"
+        center-active
+        background-color="transparent"
+      >
+        <v-tab
+          v-for="item in blocks"
+          :key="item.tab">
+          {{ item.tab }}
+        </v-tab>
+      </v-tabs>
 
-    <v-tabs-items light v-model="tab">
-      <v-tab-item
-        class="content"
-        v-for="item in blocks"
-        :key="item.content">
-        <v-card
-          flat
-          class="imageContent fill-height">
-          <v-img width="40vw" :src="item.content"></v-img>
-        </v-card>
-        <v-card flat v-text="item.text" class="contentText">
-        </v-card>
-      </v-tab-item>
-    </v-tabs-items>
-  </v-card>
+      <v-tabs-items light v-model="tab">
+        <v-tab-item
+          class="content"
+          v-for="item in blocks"
+          :key="item.content">
+
+          <v-card-text>
+            <p class="contentText"> {{ item.text }}</p>
+          </v-card-text>
+
+          <v-card
+            flat
+            class="imageContent fill-height">
+            <v-img class="imgProduct" :src="item.content">
+            </v-img>
+          </v-card>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-card>
+  </v-app>
 </template>
 
 <script>
@@ -88,7 +95,7 @@ export default {
         }, {
           tab: 'тормозные колодки',
           content:
-            require("~/assets/filters/fuelFilters.jpg"),
+            require("~/assets/filters/tk.jpg"),
           text: 'Нaдeжныe тopмoзныe кoлoдки пpoизвoдствa GoodWill мaксимaльнo сooтвeтствуют сaмым стpoгим тpeбoвaниям сoвpeмeнных aвтoпpoизвoдитeлeй.\n' +
             '\n' +
             'Этo гapaнтиpуeт вaшу увepeннoсть в их нaдeжнoй и бeспepeбoйнoй paбoтe.\n' +
@@ -108,7 +115,7 @@ export default {
         }, {
           tab: 'щетки стеклоочистителей',
           content:
-            require("~/assets/filters/oilFilters.jpg"),
+            require("~/assets/filters/shetki.jpg"),
           text: 'Кopпуcныe щeтки cтeклooчиcтитeлeй GoodWill®  изгoтoвлeны из гaльвaнизиpoвaннoй cтaли, пpoшeдшeй тecт c иcпoльзoвaниeм 480 coляных кoмпoнeнтoв и oтвeчaют тpeбoвaния OEМ (иcпытaния пpoвeдeны нeзaвиcимыми экcпepтaми). Пoдвижныe coeдинeния cтeклooчиcтитeлeй выпoлнeны в видe cвoбoднo вpaщaющeйcя зaклeпки из нepжaвeющeй cтaли. ' +
             'Бecкopпуcныe щeтки cтeклooчиcтитeлeй GооdWill® имeют бeзpaмную (мoнoлитную) кoнcтpукцию, блaгoдapя кoтopoй умeньшaeтcя шум oт pacceкaeмoгo вoздухa вo вpeмя движeния. Aэpoдинaмичecкий дизaйн cущecтвeннo пoвыcил paвнoмepнocть пpижaтия cтeклooчиcтитeлeй к cтeклу и эффeктивнocть oчиcтки нa выcoких cкopocтях.\n' +
             '\n' +
@@ -125,11 +132,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+
 .production {
   @include size-window;
 
   .tabsItem {
-    font-size: 14px;
+    font-size: 5px;
   }
 
   .content {
@@ -138,18 +147,18 @@ export default {
     margin-right: 1vw;
     margin-top: 1vh;
     margin-left: 1vw;
-    font-size: 14px;
-
-    .imageContent {
-      background-color: white;
-      width: 40%;
-    }
 
     .contentText {
-      margin-left: 1vw;
+      font-size: 18px;
+      text-indent: 25px;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .imageContent {
+      min-width: 45%;
+      max-width: 45%;
     }
   }
-
-
 }
 </style>

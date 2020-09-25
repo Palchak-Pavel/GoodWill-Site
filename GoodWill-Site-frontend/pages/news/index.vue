@@ -1,24 +1,22 @@
 <template>
-  <v-app class="appWrap">
     <v-card app light :elevation="6-1" class="newsWrap">
-      <!--    <ul>-->
-      <!--      <li v-for="newItem of news" :key="newItem.id">{{ newItem.heading }}</li>-->
-      <!--    </ul>-->
+<!--          <ul>-->
+<!--            <li v-for="newItem of news" :key="newItem.id">{{ newItem.heading }}</li>-->
+<!--          </ul>-->
 
-      <!--      <v-banner v-for="newItem of news" :key="newItem.id" class="newsCard">-->
-      <!--        <h3> {{ newItem.title }}</h3>-->
+<!--            <v-banner v-for="newItem of news" :key="newItem.id" class="newsCard">-->
+<!--              <h3> {{ newItem.title }}</h3>-->
 
-      <!--&lt;!&ndash;        <v-divider></v-divider>&ndash;&gt;-->
-      <!--        <v-banner :elevation="2 -1" class="bannerDescription rounded-r-xl">-->
-      <!--          {{ newItem.description }}-->
-      <!--          <template v-slot:actions>-->
-      <!--            <v-btn text color="indigo darken-4" class="rounded-xl">Перейти</v-btn>-->
-      <!--          </template>-->
-      <!--        </v-banner>-->
-      <!--      </v-banner>-->
+<!--      &lt;!&ndash;        <v-divider></v-divider>&ndash;&gt;-->
+<!--              <v-banner :elevation="2 -1" class="bannerDescription rounded-r-xl">-->
+<!--                {{ newItem.description }}-->
+<!--                <template v-slot:actions>-->
+<!--                  <v-btn text color="indigo darken-4" class="rounded-xl">Перейти</v-btn>-->
+<!--                </template>-->
+<!--              </v-banner>-->
+<!--            </v-banner>-->
       <news/>
     </v-card>
-  </v-app>
 </template>
 
 <script>

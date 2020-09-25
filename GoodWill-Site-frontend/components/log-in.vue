@@ -102,12 +102,12 @@ export default {
 .userForm {
   display: flex;
   align-items: center;
-  background-color: $colorCorporate !important;
+  background-color: transparent !important;
 
   .log-in-btn {
-    background-color: $colorCorporate;
     color:$colorCorporate;
     margin-left: 10px;
+    margin-right: 10px;
   }
 }
 

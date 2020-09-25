@@ -1,15 +1,15 @@
 <template>
   <v-card>
-  <v-banner v-for="newItem of news" :key="newItem.id" class="newsCard">
-    <h3> {{ newItem.title }}</h3>
+    <v-banner v-for="newItem of news" :key="newItem.id" class="newsCard">
+      <h3> {{ newItem.title }}</h3>
 
-    <v-banner :elevation="2 -1" class="bannerDescription rounded-r-xl">
-      {{ newItem.description }}
-      <template v-slot:actions>
-        <v-btn text color="indigo darken-4" class="rounded-xl">Перейти</v-btn>
-      </template>
+      <v-banner :elevation="2 -1" class="bannerDescription rounded-r-xl">
+        {{ newItem.description }}
+        <template v-slot:actions>
+          <v-btn :to="newsDetailed.href" text color="indigo darken-4" class="rounded-xl">Перейти</v-btn>
+        </template>
+      </v-banner>
     </v-banner>
-  </v-banner>
   </v-card>
 </template>
 
@@ -18,6 +18,9 @@ export default {
   name: "news",
   data() {
     return {
+      newsDetailed: {
+        href: '/news/news_details/_id',
+      },
       news: [
         {
           id: 1,
@@ -69,6 +72,7 @@ export default {
 <style lang="scss" scoped>
 .newsCard {
   padding: 5px;
+  color: $colorCorporate;
 
   .bannerDescription {
     border-bottom: 1px solid rgba(3, 31, 90, 0.2);
