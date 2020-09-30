@@ -1,6 +1,5 @@
 <template>
-  <v-app class="wrapper">
-    <v-card app  :elevation="6-1">
+    <v-card  flat>
       <v-card-title class="aboutWrap">
         <h2>О компании</h2>
         <v-card-text class="infoCompany text-justify text-break">
@@ -22,21 +21,15 @@
         </v-card-text>
       </v-card-title>
     </v-card>
-  </v-app>
 </template>
 
 <script>
 export default {
   name: "about",
-
-  data() {
-    return {}
-  }
 }
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
 
   .aboutWrap {
     width: 80%;
@@ -52,6 +45,5 @@ export default {
       }
     }
   }
-}
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-card :elevation="6-1" class="breadcrumbsWrapp">
+  <v-card flat class="breadcrumbsWrapp">
     <v-breadcrumbs  :items="items" class="breadcrumbs"></v-breadcrumbs>
   </v-card>
 </template>

@@ -10,16 +10,20 @@
         <v-col
           cols="12" lg="8"
           class="fill-height">
-          <v-card  class="barMenu">
-          <menuBar/>
+          <v-card :elevation="20-1" class="barMenu">
+            <menuBar/>
           </v-card>
-          <v-card>
-          <breadcrumbs/>
+          <v-card :elevation="20-1">
+            <breadcrumbs/>
           </v-card>
-          <v-main class="mainContent">
-            <nuxt/>
-          </v-main>
-          <footerSite/>
+          <v-card :elevation="20-1">
+            <v-main class="mainContent">
+              <nuxt/>
+            </v-main>
+          </v-card>
+          <v-card :elevation="20-1">
+            <footerSite/>
+          </v-card>
         </v-col>
       </v-row>
     </v-card>
@@ -44,8 +48,8 @@ export default {
 <style lang="scss">
 
 .siteWrapper {
-
   .mainContent {
+    @include size-window;
   }
 }
 

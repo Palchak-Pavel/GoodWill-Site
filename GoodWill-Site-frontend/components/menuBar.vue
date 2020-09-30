@@ -1,39 +1,5 @@
 <template>
-  <!--  <v-app-bar class="barWrap rounded-t-lg">-->
-  <!--    <v-row>-->
-  <!--      <v-col>-->
-  <!--        <v-toolbar flat class="toolBar">-->
-  <!--          <v-card flat class="wrapper">-->
-  <!--            <v-card class="imgWrap rounded-lg" flat>-->
-  <!--              <router-link :to="logo.href">-->
-  <!--                <v-img class="logo_img" :src="logo.src"></v-img>-->
-  <!--              </router-link>-->
-  <!--            </v-card>-->
-
-  <!--              <v-toolbar-items class="menuBar">-->
-  <!--                <v-btn dark text v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route"-->
-  <!--                       class="items rounded" small>-->
-  <!--                  {{ item.title }}-->
-  <!--                </v-btn>-->
-  <!--                <v-card flat class="btnCatalogWrap">-->
-  <!--                  <v-btn light rounded class="btnCatalog rounded" href="http://catalog.goodfil.com/products/search"-->
-  <!--                         target="_blank">-->
-  <!--                    Каталог-->
-  <!--                  </v-btn>-->
-  <!--                </v-card>-->
-  <!--                &lt;!&ndash;Вход пользователя&ndash;&gt;-->
-  <!--                <logIn/>-->
-  <!--                &lt;!&ndash;&ndash;&gt;-->
-  <!--              </v-toolbar-items>-->
-  <!--          </v-card>-->
-  <!--        </v-toolbar>-->
-  <!--      </v-col>-->
-  <!--    </v-row>-->
-  <!--  </v-app-bar>-->
-
-  <v-app>
     <v-card
-      app
       tile
       flat
       class="rounded-t-lg"
@@ -62,10 +28,11 @@
         <v-spacer></v-spacer>
 
         <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn dark
-                 class="itemsToolbar rounded-lg"
-                 text v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route"
-                 small>
+          <v-btn
+            dark
+            class="itemsToolbar rounded-lg"
+            text v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route"
+            small>
             {{ item.title }}
           </v-btn>
           <!--catalog------------>
@@ -80,36 +47,22 @@
         v-model="drawer"
         absolute
         height="80vh"
-        temporary
       >
-
         <v-list
-          nav
-        >
+          nav>
           <v-list-item-group
             v-model="group"
-            active-class="deep-purple--text text--accent-4"
+            active-class="text--accent-4"
+            color="indigo"
           >
             <v-list-item
-              v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route" >
+              v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">
+              {{ item.title }}
             </v-list-item>
-
-<!--            <v-list-item>-->
-<!--              <v-list-item-title>Bar</v-list-item-title>-->
-<!--            </v-list-item>-->
-
-<!--            <v-list-item>-->
-<!--              <v-list-item-title>Fizz</v-list-item-title>-->
-<!--            </v-list-item>-->
-
-<!--            <v-list-item>-->
-<!--              <v-list-item-title>Buzz</v-list-item-title>-->
-<!--            </v-list-item>-->
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
     </v-card>
-  </v-app>
 </template>
 
 <script>
@@ -180,48 +133,4 @@ export default {
   max-height: 50px !important;
   align-self: center;
 }
-
-//.barWrap {
-//  background-color: $colorCorporate !important;
-//
-//
-//  .toolBar {
-//    background-color: $colorCorporate !important;
-//
-//    .wrapper {
-//      display: flex;
-//      background-color: $colorCorporate !important;
-//
-//      .menuBar {
-//      }
-//
-//      .imgWrap {
-//        //margin-right: 2.5vw;
-//      }
-//
-//      .logo_img {
-//        background-color: transparent;
-//      }
-//
-//      .items {
-//        margin-left: 10px;
-//        align-items: center;
-//      }
-//
-//      .btnCatalogWrap {
-//        background-color: transparent;
-//        align-self: center;
-//        margin-right: 20px;
-//        margin-left: 10px;
-//
-//        .btnCatalog {
-//          color: $colorCorporate;
-//        }
-//      }
-//    }
-//  }
-//
-//}
-
-
 </style>

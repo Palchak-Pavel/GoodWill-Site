@@ -1,38 +1,36 @@
 <template>
-  <v-app>
-    <v-card app :elevation="6-1" class="production">
-      <v-tabs
-        v-model="tab"
-        center-active
-        background-color="transparent"
-      >
-        <v-tab
-          v-for="item in blocks"
-          :key="item.tab">
-          {{ item.tab }}
-        </v-tab>
-      </v-tabs>
+  <v-card flat class="production">
+    <v-tabs
+      v-model="tab"
+      center-active
+      background-color="transparent"
+    >
+      <v-tab
+        v-for="item in blocks"
+        :key="item.tab">
+        {{ item.tab }}
+      </v-tab>
+    </v-tabs>
 
-      <v-tabs-items light v-model="tab">
-        <v-tab-item
-          class="content"
-          v-for="item in blocks"
-          :key="item.content">
+    <v-tabs-items light v-model="tab">
+      <v-tab-item
+        class="content"
+        v-for="item in blocks"
+        :key="item.content">
 
-          <v-card-text>
-            <p class="contentText"> {{ item.text }}</p>
-          </v-card-text>
+        <v-card-text>
+          <p class="contentText"> {{ item.text }}</p>
+        </v-card-text>
 
-          <v-card
-            flat
-            class="imageContent fill-height">
-            <v-img class="imgProduct" :src="item.content">
-            </v-img>
-          </v-card>
-        </v-tab-item>
-      </v-tabs-items>
-    </v-card>
-  </v-app>
+        <v-card
+          flat
+          class="imageContent fill-height">
+          <v-img class="imgProduct" :src="item.content">
+          </v-img>
+        </v-card>
+      </v-tab-item>
+    </v-tabs-items>
+  </v-card>
 </template>
 
 <script>
