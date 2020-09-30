@@ -1,5 +1,5 @@
 <template>
-  <v-card :elevation="6-1" class="contactWrap">
+  <v-card flat class="contactWrap">
     <v-card flat>
       <v-card flat>
         <h1>Центральный офис</h1>

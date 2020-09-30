@@ -1,6 +1,5 @@
 <template>
   <v-card flat class="partnersWrap">
-    <h1>Partners</h1>
     <v-row>
       <v-col
         cols="12"
