@@ -6,26 +6,15 @@
         cols="12"
         sm="6"
       >
-        <v-text-field
-          v-model="search"
-          type="text"
-          placeholder="Поиск по городам">
-        </v-text-field>
-<!--            <v-select v-for="(city, index ) in filteredCities" :key="index">-->
-<!--              {{ city.name }}-->
-<!--            </v-select>-->
-
-        <v-select
-          color="indigo"
-          :items="filteredCities"
-          item-text="name"
-          persistent-hint
-          return-object
-          single-line
-          label="Город"
-          dense
-        >
-        </v-select>
+        <v-form>
+          <v-autocomplete
+            v-model="search"
+            :items="filteredCities"
+            item-text="name"
+            label="Город"
+          >
+          </v-autocomplete>
+        </v-form>
       </v-col>
     </v-row>
     <v-card flat class="mapGoogle">
