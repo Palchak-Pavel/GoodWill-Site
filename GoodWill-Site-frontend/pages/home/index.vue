@@ -4,11 +4,10 @@
       <slider/>
     </v-container>
     <router-link class="linkNewsDetailed" :to="newsDetailed.href">
-      <v-row>
+      <v-row
+        align="start" justify="center">
         <v-col
-          md="5"
-          sm="10"
-          xs="10"
+          cols="10" md="5"
           v-for="newItem of newsArr.slice(0,6)"
           :key="newItem.id"
           class="newsCard">
