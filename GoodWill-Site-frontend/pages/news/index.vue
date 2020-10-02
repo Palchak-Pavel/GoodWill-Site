@@ -18,7 +18,7 @@ export default {
     return {
       newsArr: [],
       newsDetailed: {
-        href: '/news/news_details/_id',
+        href: '/news/_id',
       },
     }
   },

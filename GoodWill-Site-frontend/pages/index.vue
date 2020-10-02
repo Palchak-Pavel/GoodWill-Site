@@ -1,5 +1,5 @@
 <template>
-  <v-card height="88vh">
+  <v-card flat height="88vh">
     <h1>Index</h1>
 
 

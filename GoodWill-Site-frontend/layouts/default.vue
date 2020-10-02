@@ -1,32 +1,21 @@
 <template>
   <v-app>
-    <v-card
+    <v-row
       app
-      light class="siteWrapper">
-      <v-row
-        align="start"
-        justify="center"
+      align="start"
+      justify="center"
+      class="fill-height">
+      <v-col
+        cols="12" lg="8"
         class="fill-height">
-        <v-col
-          cols="12" lg="8"
-          class="fill-height">
-          <v-card :elevation="20-1" class="barMenu">
-            <menuBar/>
-          </v-card>
-          <v-card :elevation="20-1">
-            <breadcrumbs/>
-          </v-card>
-          <v-card :elevation="20-1">
-            <v-main class="mainContent">
-              <nuxt/>
-            </v-main>
-          </v-card>
-          <v-card :elevation="20-1">
-            <footerSite/>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-card>
+        <menuBar/>
+        <breadcrumbs/>
+        <v-main class="mainContent">
+          <nuxt/>
+        </v-main>
+        <footerSite/>
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 
@@ -47,10 +36,5 @@ export default {
 
 <style lang="scss">
 
-.siteWrapper {
-  .mainContent {
-    @include size-window;
-  }
-}
 
 </style>

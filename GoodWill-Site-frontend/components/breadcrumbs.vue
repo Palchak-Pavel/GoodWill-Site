@@ -29,7 +29,6 @@ export default {
   methods: {
     getRoute() {
       this.items = this.$route.matched;
-      console.log(this.$route);
     }
   },
   created() {

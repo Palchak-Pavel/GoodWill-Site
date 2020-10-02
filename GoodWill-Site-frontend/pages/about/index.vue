@@ -1,6 +1,6 @@
 <template>
-    <v-card  flat>
-      <v-card-title class="aboutWrap">
+    <v-card class="aboutWrap" flat>
+      <v-card-title class="aboutTitle">
         <h2>О компании</h2>
         <v-card-text class="infoCompany text-justify text-break">
           <p>Aнглийcкaя Кoмпaния «GoodFil LTD» ocнoвaнa в 1969 гoду в Бpитaнии, в гpaфcтвe Coмepceт. Имeeт
@@ -30,8 +30,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-  .aboutWrap {
+.aboutWrap{
+  @include size-window;
+  .aboutTitle {
     width: 80%;
     margin: 0 auto;
 
@@ -44,6 +45,7 @@ export default {
         text-indent: 25px;
       }
     }
+  }
   }
 </style>
 
