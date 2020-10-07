@@ -1,7 +1,7 @@
 <template>
   <v-card flat class="contactWrap">
-    <v-card flat class="contactPhone">
-      <v-card flat class="address">
+    <v-row justify-md="center" align-content-md="space-between">
+      <v-col cols="12" sm="6" class="address">
         <v-card flat>
           <h1>Центральный офис</h1>
           <h3>Наш адрес:</h3>
@@ -11,9 +11,9 @@
           <h3>Ищите продукцию GoodWill® в своем городе?</h3>
           <h3>Ознакомьтесь с разделом <a>ПАРТНЕРЫ</a></h3>
         </v-card>
-      </v-card>
+      </v-col>
 
-      <v-card flat>
+      <v-col cols="12" sm="6">
         <h3>Телефоны:</h3>
         <v-divider class="divider"></v-divider>
         <h2>+7 (495) 651-09-58 (многоканальный)</h2>
@@ -23,8 +23,8 @@
           <h3>Время работы:</h3>
           <h3>Понедельник - пятница: 09:00-18:00</h3>
         </v-card>
-      </v-card>
-    </v-card>
+      </v-col>
+    </v-row>
 
     <v-card flat class="addressWrap">
 
@@ -44,6 +44,19 @@ export default {
   data() {
     return {
       contactAddress: require("~/assets/contact-address.png"),
+      title: 'Контакты'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'Хид контакты',
+          name: 'Имя контакты',
+          content: 'Контент контакты'
+        }
+      ]
     }
   },
   components: {
@@ -66,21 +79,23 @@ export default {
     .address {
       margin-top: 5px;
       margin-bottom: 5px;
-      a{
+
+      a {
         font-size: 18px;
       }
 
       .productInCity {
-       position: absolute;
+        position: absolute;
         bottom: 0;
       }
     }
   }
 
   .addressWrap {
-    display: flex;
-    flex-direction: column;
-    .contactAddress{
+    //display: flex;
+    //flex-direction: column;
+
+    .contactAddress {
       bottom: 0;
     }
   }

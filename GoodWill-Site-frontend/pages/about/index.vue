@@ -26,6 +26,23 @@
 <script>
 export default {
   name: "about",
+  data() {
+    return {
+      title: 'О компании'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'Хид о компании',
+          name: 'Имя о компании',
+          content: 'Контент о компании'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -41,7 +58,6 @@ export default {
         margin: 20px 10px 20px 10px;
         font-size: 20px;
         line-height: 1.3;
-
         text-indent: 25px;
       }
     }

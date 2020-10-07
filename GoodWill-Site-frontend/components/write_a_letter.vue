@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row justify="center">
     <v-dialog light v-model="dialog" max-width="50vw">
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -17,16 +17,24 @@
           <v-container>
             <v-row>
               <v-col cols="12" sm="6" md="6">
-                <v-text-field label="Ваше имя:" required></v-text-field>
+                <v-text-field
+                  outlined
+                  label="Ваше имя:" required></v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="6">
-                <v-text-field label="Город:" required></v-text-field>
+                <v-text-field
+                  outlined
+                  label="Город:" required></v-text-field>
               </v-col>
               <v-col cols="12">
-                <v-text-field label="Email*" required></v-text-field>
+                <v-text-field
+                  outlined
+                  label="Email*" required></v-text-field>
               </v-col>
               <v-col cols="12">
-                <v-text-field label="Телефон:"></v-text-field>
+                <v-text-field
+                  outlined
+                  label="Телефон:"></v-text-field>
               </v-col>
               <!---------------Textarea----------------------->
               <v-col cols="12" sm="12">

@@ -32,20 +32,36 @@ export default {
       newsDetailed: {
         href: '/news/_id',
       },
+      title: 'Главная',
+      description: 'Главная описание'
     }
   },
-  async created() {
-    try {
-      const res = await this.$axios.get('http://localhost:3004/news')
-      this.newsArr = res.data;
-    } catch (e) {
-      console.error(e);
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'Хид Главная',
+          name: 'Имя Главная',
+          content: this.description
+        }
+      ]
     }
   },
-  components: {
-    slider,
+      async created()
+    {
+      try {
+        const res = await this.$axios.get('http://localhost:3004/news')
+        this.newsArr = res.data;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  ,
+    components: {
+      slider,
+    }
   }
-}
 </script>
 
 <style lang="scss">

@@ -41,6 +41,7 @@
                       <v-card-text>
                         <v-form>
                           <v-text-field
+                            outlined
                             label="Логин"
                             name="login"
                             prepend-icon="mdi-account"
@@ -48,6 +49,7 @@
                           ></v-text-field>
 
                           <v-text-field
+                            outlined
                             id="password"
                             label="Пароль"
                             name="password"

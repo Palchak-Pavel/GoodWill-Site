@@ -5,6 +5,7 @@
       >
         <v-form>
           <v-autocomplete
+            outlined
             v-model="search"
             :items="filteredCities"
             item-text="name"
@@ -34,8 +35,21 @@ export default {
   data() {
     return {
       search: "",
-      cities: []
+      cities: [],
+      title: 'Партнёры'
     };
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'Хид Партнёры',
+          name: 'Имя Партнёры',
+          content: 'Контент Партнёры'
+        }
+      ]
+    }
   },
 
   async created() {

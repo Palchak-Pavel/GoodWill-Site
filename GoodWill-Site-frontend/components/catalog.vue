@@ -19,7 +19,6 @@ export default {
   align-self: center;
   margin-right: 20px;
   margin-left: 10px;
-
   .btnCatalog {
     color: $colorCorporate;
   }

@@ -23,7 +23,20 @@ export default {
       dialog: true,
       backHome:{
         href: "/home"
-      }
+      },
+      title: 'Новости айди'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'Хид Новости айди',
+          name: 'Имя Новости айди',
+          content: 'Контент Новости айди'
+        }
+      ]
     }
   },
 }

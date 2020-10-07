@@ -2,7 +2,10 @@
   <v-card app light flat class="newsWrap">
     <v-banner v-for="newItem of newsArr" :key="newItem.id" class="newsCard">
       <h3> {{ newItem.heading }}</h3>
-      <v-banner :elevation="2 -1" class="bannerDescription rounded-r-xl">
+      <v-banner
+        :elevation="2 -1"
+        class="bannerDescription rounded-r-xl"
+      md="12">
         {{ newItem.title }}
         <template v-slot:actions>
           <v-btn :to="newsDetailed.href" text color="indigo darken-4" class="rounded-xl">Перейти</v-btn>
@@ -20,6 +23,19 @@ export default {
       newsDetailed: {
         href: '/news/_id',
       },
+      title: 'Новости'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'Хид Новости',
+          name: 'Имя Новости',
+          content: 'Контент Новости'
+        }
+      ]
     }
   },
   async created() {
@@ -34,6 +50,9 @@ export default {
 </script>
 
 <style lang="scss">
+.v-banner--is-mobile .v-banner__content .v-banner__wrapper {
+  flex-wrap: wrap;
+}
 .theme--light.v-banner.v-sheet .v-banner__wrapper {
   border-bottom: none;
 }

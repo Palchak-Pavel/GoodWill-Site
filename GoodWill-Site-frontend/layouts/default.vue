@@ -7,7 +7,7 @@
       class="fill-height">
       <v-col
         cols="12" lg="8"
-        class="fill-height">
+        class="fill-height col-layout">
         <menuBar/>
         <breadcrumbs/>
         <v-main class="mainContent">
@@ -25,7 +25,27 @@ import breadcrumbs from "~/components/breadcrumbs.vue";
 import footerSite from "~/components/footerSite.vue";
 
 export default {
-
+  head: {
+    title: 'Лояут',
+    meta: [
+      {
+        charset: 'utf-8'
+      },
+      {
+        name: 'Мета лояут', content: 'Глобальное лояут описание'
+      },
+      {
+        hid: 'Хид лояут',
+        name: 'Мета лояут имя',
+        content: 'Мета лояут контент'
+      }
+    ],
+    link: [
+      {
+        rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'
+      }
+    ]
+  },
   components: {
     menuBar,
     breadcrumbs,
@@ -35,6 +55,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+.col-layout{
+  padding: 0;
+}
 
 </style>
