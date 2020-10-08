@@ -54,7 +54,6 @@
           </div>
         </v-col>
 
-
         <v-card-text cols="12" class="py-2 text-center bottomFooter">
            GoodWill®
         </v-card-text>
@@ -151,8 +150,6 @@ export default {
       width: 30%;
       padding-right: 5px;
     }
-
-
   }
 
   .bottomFooter {
