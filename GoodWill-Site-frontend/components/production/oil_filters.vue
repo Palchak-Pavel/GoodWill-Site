@@ -51,6 +51,10 @@ export default {
 .containerWrap {
   @include padding_production_content;
 
+  h2 {
+    @include adaptiv_font_heading;
+  }
+
   .productImg {
     float: left;
     margin: 5px 10px 0 0;
@@ -58,7 +62,7 @@ export default {
   }
 
   .textProduct {
-    @include adaptiv_font_production;
+    @include adaptiv_font_content_text;
     text-align: justify;
     text-indent: 25px;
     line-height: 1.4;

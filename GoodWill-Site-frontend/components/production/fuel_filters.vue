@@ -2,7 +2,7 @@
   <v-card flat class="containerWrap">
     <h2>Топливные фильтры</h2>
     <v-card flat class="productImg">
-    <v-img :src="image"></v-img>
+      <v-img :src="image"></v-img>
     </v-card>
     <p class="textProduct">
       Тoпливныe фильтpы GооdWill® пpeднaзнaчeны для oчиcтки тoпливa в бeнзинoвых и дизeльных двигaтeлях внутpeннeгo
@@ -29,6 +29,10 @@ export default {
 .containerWrap {
   @include padding_production_content;
 
+  h2 {
+    @include adaptiv_font_heading;
+  }
+
   .productImg {
     float: left;
     margin: 5px 10px 0 0;
@@ -36,7 +40,7 @@ export default {
   }
 
   .textProduct {
-    @include adaptiv_font_production;
+    @include adaptiv_font_content_text;
     text-align: justify;
     text-indent: 25px;
     line-height: 1.4;

@@ -12,6 +12,9 @@ $colorCorporate: #0D47A1;
   padding-left: 10px;
   padding-right: 10px;
 }
-@mixin adaptiv_font_production{
-  font-size: calc(12px + 6 * (100vw /1264));
+@mixin adaptiv_font_heading{
+  font-size: calc(14px + 8 * (100vw /1264));
+}
+@mixin adaptiv_font_content_text{
+  font-size: calc(12px + 4 * (100vw /1264));
 }

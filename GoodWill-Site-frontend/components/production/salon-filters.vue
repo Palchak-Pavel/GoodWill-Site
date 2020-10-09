@@ -40,7 +40,8 @@
     </p>
     <p class="textProduct">
       В эффективности работы салонного фильтра каждый может убедиться лично. Достаточно взглянуть, на отработавший свой
-      срок фильтр салона. Сознание того, что большинство скопившихся там загрязнений могло бы оказаться в Ваших легких, является самым
+      срок фильтр салона. Сознание того, что большинство скопившихся там загрязнений могло бы оказаться в Ваших легких,
+      является самым
       убедительным аргументом, в пользу применения таких фильтров.
     </p>
   </v-card>
@@ -61,6 +62,10 @@ export default {
 .containerWrap {
   @include padding_production_content;
 
+  h2 {
+    @include adaptiv_font_heading;
+  }
+
   .productImg {
     float: left;
     margin: 5px 10px 0 0;
@@ -68,7 +73,7 @@ export default {
   }
 
   .textProduct {
-    @include adaptiv_font_production;
+    @include adaptiv_font_content_text;
     text-align: justify;
     text-indent: 25px;
     line-height: 1.4;
