@@ -77,7 +77,7 @@ export default {
       group: null,
       logo: {
         src: require("~/assets/logo/goodwill.png"),
-        href: "/home"
+        href: "/"
       },
     }
 

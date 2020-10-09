@@ -2,14 +2,18 @@
   <v-card flat class="breadcrumbsWrapp">
     <v-breadcrumbs divider="/">
       <v-breadcrumbs-item
-        href="/home">
-        Home
-      </v-breadcrumbs-item>
-      <v-breadcrumbs-item divider="/"
         v-for="item in items" :key="item.path"
-      >
+        divider="/"
+        :to="breadcrumbs.href">
+        {{ breadcrumbs.default }}
         {{ item.name }}
       </v-breadcrumbs-item>
+<!--      <v-breadcrumbs-item-->
+<!--        divider="/"-->
+<!--        v-for="item in items" :key="item.path"-->
+<!--      >-->
+<!--        {{ item.name }}-->
+<!--      </v-breadcrumbs-item>-->
     </v-breadcrumbs>
   </v-card>
 </template>
@@ -19,6 +23,10 @@ export default {
   data() {
     return {
       items: [],
+      breadcrumbs: {
+        href: "/",
+        default: 'home'
+      },
     }
   },
   watch: {

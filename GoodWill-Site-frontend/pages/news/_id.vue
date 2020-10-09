@@ -22,7 +22,7 @@ export default {
     return {
       dialog: true,
       backHome:{
-        href: "/home"
+        href: "/"
       },
       title: 'Новости айди'
     }
