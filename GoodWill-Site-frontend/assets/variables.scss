@@ -8,4 +8,10 @@ $colorCorporate: #0D47A1;
 @mixin size-window{
   min-height: 88vh;
 }
-
+@mixin padding_production_content{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@mixin adaptiv_font_production{
+  font-size: calc(12px + 6 * (100vw /1264));
+}

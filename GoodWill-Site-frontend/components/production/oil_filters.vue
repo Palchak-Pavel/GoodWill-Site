@@ -49,8 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .containerWrap {
-  margin-left: 5px;
-  margin-right: 5px;
+  @include padding_production_content;
 
   .productImg {
     float: left;
@@ -59,8 +58,8 @@ export default {
   }
 
   .textProduct {
+    @include adaptiv_font_production;
     text-align: justify;
-    font-size: 18px;
     text-indent: 25px;
     line-height: 1.4;
   }

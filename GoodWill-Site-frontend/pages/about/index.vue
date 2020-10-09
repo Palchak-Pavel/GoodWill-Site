@@ -50,13 +50,15 @@ export default {
 .aboutWrap{
   @include size-window;
   .aboutTitle {
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
-
+    height: auto;
+    h2{
+      font-size: calc(20px + 8 *(100vw /1264));
+    }
     .infoCompany {
       p {
-        margin: 20px 10px 20px 10px;
-        font-size: 20px;
+        font-size: calc(16px + 4 *(100vw /1264));
         line-height: 1.3;
         text-indent: 25px;
       }
