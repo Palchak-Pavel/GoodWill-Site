@@ -41,6 +41,7 @@
                       <v-card-text>
                         <v-form>
                           <v-text-field
+                            :rules="nameRules"
                             outlined
                             label="Логин"
                             name="login"
@@ -49,6 +50,7 @@
                           ></v-text-field>
 
                           <v-text-field
+                            :rules="passwordRules"
                             outlined
                             id="password"
                             label="Пароль"
@@ -91,7 +93,16 @@ export default {
   },
   data() {
     return {
-      logIn: false
+      logIn: false,
+      valid: true,
+      name: '',
+      password:'',
+      nameRules: [
+        v => !!v || 'Обязательное поле для ввода',
+      ],
+      passwordRules: [
+        v => !!v || 'Обязательное поле для ввода',
+      ],
     }
   },
   components: {
