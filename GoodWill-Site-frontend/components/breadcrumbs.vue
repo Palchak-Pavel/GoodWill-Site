@@ -1,59 +1,50 @@
 <template>
-  <v-card flat class="breadcrumbsWrapp">
-    <v-breadcrumbs divider="/">
-      <v-breadcrumbs-item
-        v-for="item in items" :key="item.path"
-        divider="/"
-        :to="breadcrumbs.href">
-        {{ breadcrumbs.default }}
-        {{ item.name }}
-      </v-breadcrumbs-item>
-<!--      <v-breadcrumbs-item-->
-<!--        divider="/"-->
-<!--        v-for="item in items" :key="item.path"-->
-<!--      >-->
-<!--        {{ item.name }}-->
-<!--      </v-breadcrumbs-item>-->
-    </v-breadcrumbs>
-  </v-card>
+  <v-breadcrumbs v-if="stack.length > 0" class="crumbs">
+    <v-breadcrumbs-item v-for="item in stack" class="crumbs__item" :class="item.class">
+      <router-link :to="{ name: item.name }" class="crumbs__link">
+        {{ item.label }}
+      </router-link>
+    </v-breadcrumbs-item>
+  </v-breadcrumbs>
 </template>
 
 <script>
 export default {
+  name:    'Crumbs',
   data() {
-    return {
-      items: [],
-      breadcrumbs: {
-        href: "/",
-        default: 'home'
-      },
-    }
+    return { stack: [] }
   },
-  watch: {
-    $route() {
-      this.getRoute();
-    }
+  mounted() {
+    this.buildStack()
   },
   methods: {
-    getRoute() {
-      this.items = this.$route.matched;
+    buildStack() {
+      this.stack = []
+      this.addPage(this.$router.currentRoute)
+      this.stack = this.stack.reverse()
+    },
+    addPage(route, first) {
+      this.stack.push({
+        name:  route.name,
+        label: route.meta?.breadcrumbs?.label || route.name.replace('.', ' '),
+        class: 'crumbs__item--' + (typeof first === 'undefined' ? 'current' : 'parent')
+      })
+      if (route.meta.breadcrumbs) {
+        const parent = this.getRoute(route.meta.breadcrumbs)
+        this.addPage(parent, true)
+      }
+    },
+    getRoute(name) {
+      return this.$router.options.routes.find(route => route.name === name)
     }
-  },
-  created() {
-    this.getRoute();
   }
 }
 </script>
 
-<style lang="scss">
-.breadcrumbsWrapp {
-  display: flex;
-  align-items: center;
-  height: 40px;
+<style>
 
-  .breadcrumbs {
-
-  }
+.crumbs__link {
+  text-decoration: none;
 }
 
 </style>
