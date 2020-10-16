@@ -14,7 +14,11 @@
     >
       <v-row justify="space-around">
 
-        <v-col cols="md-3 sm-12" align-self="center" color="indigo darken-4">
+        <v-col
+          class="pt-2 pb-0"
+          cols="md-3 sm-12"
+          align-self="center"
+          color="indigo darken-4">
           <v-card flat color="indigo darken-4" class="phoneNamber text-center">
             <p>+7 495 651-0958</p>
             <p>+7 495 662-8429</p>
@@ -29,33 +33,38 @@
         <!--            </ul>-->
         <!--          </v-card>-->
 
-        <v-col align-self="center" color="indigo darken-4" cols="md-9 sm-12" >
+        <v-col
+          align-self="center"
+          color="indigo darken-4"
+          cols="md-9 sm-12">
           <div class="linksItem">
-          <div class="tecalliance">
-            <a href="https://www.tecalliance.net/en/" target="_blank">
-              <v-img :src="tecalliance.tecalliance"></v-img>
-            </a>
-          </div>
-          <div class="socialLinks">
-            <a href="https://www.drive2.ru/o/goodwillsocial" target="_blank">
-              <v-img :src="drive2.drive2"></v-img>
-            </a>
-          </div>
-          <div class="socialLinks">
-            <a href="https://www.youtube.com/channel/UCXrehcqVbuxLYxV1ejm3sXg?view_as=subscriber" target="_blank">
-              <v-img :src="youtube.youtube"></v-img>
-            </a>
-          </div>
-          <div class="socialLinks">
-            <a href="https://www.instagram.com/goodwill.social/?hl=ru" target="_blank">
-              <v-img :src="instagramm.instagramm"></v-img>
-            </a>
-          </div>
+            <div class="tecalliance">
+              <a href="https://www.tecalliance.net/en/" target="_blank">
+                <v-img :src="tecalliance.tecalliance"></v-img>
+              </a>
+            </div>
+            <div class="socialLinks">
+              <a href="https://www.drive2.ru/o/goodwillsocial" target="_blank">
+                <v-img :src="drive2.drive2"></v-img>
+              </a>
+            </div>
+            <div class="socialLinks">
+              <a href="https://www.youtube.com/channel/UCXrehcqVbuxLYxV1ejm3sXg?view_as=subscriber" target="_blank">
+                <v-img :src="youtube.youtube"></v-img>
+              </a>
+            </div>
+            <div class="socialLinks">
+              <a href="https://www.instagram.com/goodwill.social/?hl=ru" target="_blank">
+                <v-img :src="instagramm.instagramm"></v-img>
+              </a>
+            </div>
           </div>
         </v-col>
 
-        <v-card-text cols="12" class="py-2 text-center bottomFooter">
-           GoodWill®
+        <v-card-text
+          cols="12"
+          class="pt-0 pb-0 text-center bottomFooter">
+          GoodWill®
         </v-card-text>
       </v-row>
     </v-card>
@@ -131,6 +140,12 @@ export default {
 }
 
 .footerWrap {
+  .phoneNamber {
+    p {
+      margin-bottom: 5px;
+      font-size: 14px;
+      }
+  }
 
   .linksItem {
     display: flex;
@@ -145,8 +160,8 @@ export default {
     }
 
     .socialLinks {
-      max-width: 50px;
-      min-width: 30px;
+      max-width: 40px;
+      min-width: 25px;
       width: 30%;
       padding-right: 5px;
     }
