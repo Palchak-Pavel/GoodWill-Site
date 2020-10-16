@@ -8,7 +8,7 @@
         align="start" justify="center">
         <v-col
           cols="10" md="5"
-          v-for="newItem of newsArr.slice(0,6)"
+          v-for="newItem of latestNews"
           :key="newItem.id"
           class="newsCard">
           <h4> {{ newItem.heading }} </h4>
@@ -22,13 +22,14 @@
 </template>
 
 <script>
+
 import slider from "~/components/slider.vue";
+import {mapGetters} from 'vuex';
 
 export default {
   name: "home",
   data() {
     return {
-      newsArr: [],
       newsDetailed: {
         href: '/news/_id',
       },
@@ -48,15 +49,11 @@ export default {
       ]
     }
   },
-  async created()
-  {
-    try {
-      const res = await this.$axios.get('http://localhost:3004/news')
-      this.newsArr = res.data;
-    } catch (e) {
-      console.error(e);
-    }
+
+  computed: {
+    ...mapGetters("news", ["latestNews"])
   },
+
   components: {
     slider,
   }
