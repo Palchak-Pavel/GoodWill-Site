@@ -11,7 +11,9 @@
         <menuBar/>
         <breadcrumbs/>
         <v-main class="mainContent">
+          <transition name="fade" >
           <nuxt/>
+          </transition>
         </v-main>
         <footerSite/>
       </v-col>
@@ -57,6 +59,16 @@ export default {
 <style lang="scss">
 .col-layout{
   padding: 0;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 1.5s ease;
+}
+.fade-leave-active {
+  transition: opacity 1.5s ease;
+  opacity: 0;
 }
 
 </style>

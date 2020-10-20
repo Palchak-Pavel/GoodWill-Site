@@ -1,9 +1,9 @@
 <template>
   <v-card flat class="containerWrap">
     <h2>Воздушные фильтры</h2>
-    <v-card flat class="productImg">
+    <div class="productImg">
       <v-img :src="image"></v-img>
-    </v-card>
+    </div>
 
     <p class="textProduct">
       Трудно представить качественную защиту двигателя автомобиля, в котором не установлены современные автомобильные
@@ -39,6 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .containerWrap {
   @include padding_production_content;
 

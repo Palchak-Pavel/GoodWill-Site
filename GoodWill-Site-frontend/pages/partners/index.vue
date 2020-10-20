@@ -3,8 +3,8 @@
     <v-row>
       <v-col
       >
-        <v-form>
-          <v-autocomplete
+        <v-form transition="slide-x-transition">
+          <v-autocomplete transition="slide-x-transition"
             outlined
             v-model="search"
             :items="filteredCities"
