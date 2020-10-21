@@ -19,26 +19,38 @@
               <v-col cols="12" sm="6" md="6">
                 <v-text-field
                   outlined
-                  label="Ваше имя:" required></v-text-field>
+                  label="Ваше имя:"
+                  :rules="nameRules"
+                  required>
+                </v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="6">
                 <v-text-field
                   outlined
-                  label="Город:" required></v-text-field>
+                  :rules="cityRules"
+                  label="Город:"
+                  required>
+                </v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
                   outlined
-                  label="Email*" required></v-text-field>
+                  :rules="emailRules"
+                  label="Email*"
+                  required>
+                </v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
                   outlined
-                  label="Телефон:"></v-text-field>
+                  :rules="phoneRules"
+                  label="Телефон:">
+                </v-text-field>
               </v-col>
               <!---------------Textarea----------------------->
               <v-col cols="12" sm="12">
                 <v-textarea
+                  :rules="messageRules"
                   label="Сообщение"
                   auto-grow
                   outlined
@@ -66,6 +78,21 @@ export default {
   data() {
     return {
       dialog: false,
+      nameRules: [
+        v => !!v || 'Обязательное поле для ввода',
+      ],
+      emailRules: [
+        v => !!v || 'Обязательное поле для ввода',
+      ],
+      cityRules: [
+        v => !!v || 'Обязательное поле для ввода',
+      ],
+      phoneRules: [
+        v => !!v || 'Обязательное поле для ввода',
+      ],
+      messageRules: [
+        v => !!v || 'Обязательное поле для ввода',
+      ],
     }
   },
 }
