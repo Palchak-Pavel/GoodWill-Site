@@ -1,5 +1,4 @@
 <template>
-
   <v-row justify="center" class="production">
     <v-col cols="md-12 sm-8" class="tabsWrap">
       <v-btn depressed class="btnTabs" @click="component='eco_filters'">
@@ -111,6 +110,4 @@ export default {
     margin-bottom: 4px;
   }
 }
-
-
 </style>

@@ -3,8 +3,12 @@
     <v-row>
       <v-col
       >
-        <v-form transition="slide-x-transition">
-          <v-autocomplete transition="slide-x-transition"
+        <v-form>
+        <transition
+          name="fade"
+          mode="out-in"
+          appear>
+          <v-autocomplete
             outlined
             v-model="search"
             :items="filteredCities"
@@ -12,6 +16,7 @@
             label="Город"
           >
           </v-autocomplete>
+        </transition>
         </v-form>
       </v-col>
     </v-row>
@@ -71,11 +76,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active {
+  animation: slideIn 1.5s;
+}
+
+.fade-leave, .fade-leave-to {
+}
+
+.fade-leave-active {
+  animation: slideOut 1.5s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(20vw)
+  }
+  to {
+    transform: translateX(0)
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0)
+  }
+  to {
+    transform: translateX(-20vw)
+  }
+}
+
 .partnersWrap {
   @include size-window;
-
-  .mapGoogle {
-
-  }
 }
 </style>
