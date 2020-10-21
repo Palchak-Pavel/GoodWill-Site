@@ -4,7 +4,7 @@
       flat
       class="rounded-t-lg"
     >
-      <v-toolbar
+      <v-toolbar flat
         color="indigo darken-2"
         dark
         class="rounded-t-lg"
