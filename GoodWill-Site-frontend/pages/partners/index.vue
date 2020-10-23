@@ -12,9 +12,8 @@
             outlined
             v-model="search"
             :items="filteredCities"
-            item-text="name"
-            label="Город"
-          >
+            item-text="city"
+            label="Город">
           </v-autocomplete>
         </transition>
         </v-form>
@@ -59,7 +58,7 @@ export default {
 
   async created() {
     try {
-      const res = await this.$axios.get('http://localhost:3004/cities')
+      const res = await this.$axios.get('http://192.168.0.155:8080/salesapi/api/cities')
       this.cities = res.data;
     } catch (e) {
       console.error(e);
@@ -68,7 +67,7 @@ export default {
   computed: {
     filteredCities() {
       return this.cities.filter(city => {
-        return city.name.toUpperCase().match(this.search.toUpperCase())
+        return city.city.toUpperCase().match(this.search.toUpperCase())
       });
     }
   }

@@ -3,25 +3,40 @@
     <v-row justify-md="center" align-content-md="space-between">
       <v-col cols="12" sm="6" class="address">
         <v-card flat>
-          <h1>Центральный офис</h1>
-          <p class="subtitle">Наш адрес:</p>
-          <a>107078, Россия, г. Москва, ул. Новая Басманная, дом 23Б, стр. 20</a>
+
+          <v-card-title>
+            <h1>Центральный офис</h1>
+          </v-card-title>
+
+          <v-card-text>
+            <p class="subtitle">Наш адрес:</p>
+            <a>107078, Россия, г. Москва, ул. Новая Басманная, дом 23Б, стр. 20</a>
+          </v-card-text>
         </v-card>
+
         <v-card flat class="productInCity">
-          <p class="subtitle">Ищите продукцию GoodWill® в своем городе?</p>
-          <p class="subtitle">Ознакомьтесь с разделом <a>ПАРТНЕРЫ</a></p>
+          <v-card-text>
+            <p class="subtitle">Ищите продукцию GoodWill® в своем городе?</p>
+            <p class="subtitle">Ознакомьтесь с разделом <a>ПАРТНЕРЫ</a></p>
+          </v-card-text>
         </v-card>
       </v-col>
 
       <v-col cols="12" sm="6">
-        <p class="subtitle">Телефоны:</p>
-        <p class="phoneNamber">+7 (495) 651-09-58 (многоканальный)</p>
-        <v-divider></v-divider>
-        <p class="phoneNamber">+7 (495) 662-84-29 (многоканальный)</p>
-        <v-divider></v-divider>
+        <v-card-text>
+          <p class="subtitle">Телефоны:</p>
+          <p class="phoneNamber">+7 (495) 651-09-58 (многоканальный)</p>
+          <v-divider></v-divider>
+          <p class="phoneNamber">+7 (495) 662-84-29 (многоканальный)</p>
+          <v-divider></v-divider>
+        </v-card-text>
+
         <v-card flat>
-          <p class="subtitle">Время работы:</p>
-          <p class="subtitle">Понедельник - пятница: 09:00-18:00</p>
+          <v-card-text>
+            <p class="subtitle">Время работы:</p>
+            <p class="subtitle">Понедельник - пятница: 09:00-18:00</p>
+          </v-card-text>
+
         </v-card>
       </v-col>
     </v-row>
@@ -65,6 +80,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-card__text{
+  padding: 5px;
+}
 .v-application p {
   margin-bottom: 0;
 }
@@ -80,10 +98,12 @@ export default {
   a {
     @include adaptiv_font_content_text;
   }
-.phoneNamber{
-  margin-bottom: 0;
-  margin-top: 10px;
-}
+
+  .phoneNamber {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+
   .subtitle {
     @include adaptiv_font_content_text;
   }
@@ -92,19 +112,9 @@ export default {
     display: flex;
     justify-content: space-between;
 
-    .address {
-      margin-top: 5px;
-      margin-bottom: 5px;
-
-
-      .productInCity {
-        position: absolute;
-        bottom: 0;
-      }
-    }
   }
-  .addressWrap {
 
+  .addressWrap {
     .contactAddress {
       bottom: 0;
     }

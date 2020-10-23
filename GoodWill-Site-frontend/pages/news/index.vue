@@ -1,7 +1,11 @@
 <template>
   <v-card app light flat class="newsWrap">
     <v-banner v-for="newItem of news" :key="newItem.id" class="newsCard">
-      <h3> {{ newItem.heading }}</h3>
+
+      <v-card-title>
+        <h3> {{ newItem.heading }}</h3>
+      </v-card-title>
+
       <v-banner
         :elevation="2 -1"
         class="bannerDescription rounded-r-xl"
