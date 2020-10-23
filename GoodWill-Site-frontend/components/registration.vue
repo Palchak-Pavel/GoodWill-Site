@@ -13,8 +13,7 @@
               text
               dark
               v-bind="attrs"
-              v-on="on"
-            >
+              v-on="on">
               Регистрация
             </v-btn>
           </template>

@@ -16,22 +16,16 @@
 
         <v-col
           class="pt-2 pb-0"
-          cols="md-3 sm-12"
-          align-self="center"
+          cols="md-2 sm-12"
           color="indigo darken-4">
           <v-card flat color="indigo darken-4" class="phoneNamber text-center">
-            <p>+7 495 651-0958</p>
-            <p>+7 495 662-8429</p>
+            <v-card-text>
+              <p>+7 495 651-0958</p>
+              <p>+7 495 662-8429</p>
+            </v-card-text>
             <write_a_letter/>
           </v-card>
         </v-col>
-        <!--          <v-card class="imgLinks">-->
-        <!--            <ul class="imgLinks" >-->
-        <!--              <li v-for="link in links" :key='link' class="imgLinksItem" >-->
-        <!--                <v-img :src="link.imgLink"></v-img>-->
-        <!--              </li>-->
-        <!--            </ul>-->
-        <!--          </v-card>-->
 
         <v-col
           align-self="center"

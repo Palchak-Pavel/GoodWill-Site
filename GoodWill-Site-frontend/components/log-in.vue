@@ -4,8 +4,7 @@
         <v-btn
           class="log-in-btn"
           light
-          @click.stop="logIn = true"
-        >
+          @click.stop="logIn = true">
           Вход
         </v-btn>
 

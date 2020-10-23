@@ -1,50 +1,50 @@
 <template>
-  <v-breadcrumbs v-if="stack.length > 0" class="crumbs">
-    <v-breadcrumbs-item v-for="item in stack" class="crumbs__item" :class="item.class">
-      <router-link :to="{ name: item.name }" class="crumbs__link">
-        {{ item.label }}
-      </router-link>
-    </v-breadcrumbs-item>
-  </v-breadcrumbs>
+  <div>
+    <v-breadcrumbs
+      :items="items"
+      divider="/">
+    </v-breadcrumbs>
+  </div>
 </template>
 
 <script>
 export default {
-  name:    'Crumbs',
   data() {
-    return { stack: [] }
-  },
-  mounted() {
-    this.buildStack()
-  },
-  methods: {
-    buildStack() {
-      this.stack = []
-      this.addPage(this.$router.currentRoute)
-      this.stack = this.stack.reverse()
-    },
-    addPage(route, first) {
-      this.stack.push({
-        name:  route.name,
-        label: route.meta?.breadcrumbs?.label || route.name.replace('.', ' '),
-        class: 'crumbs__item--' + (typeof first === 'undefined' ? 'current' : 'parent')
-      })
-      if (route.meta.breadcrumbs) {
-        const parent = this.getRoute(route.meta.breadcrumbs)
-        this.addPage(parent, true)
-      }
-    },
-    getRoute(name) {
-      return this.$router.options.routes.find(route => route.name === name)
+    return {
+      items: [
+        {
+          text: 'home',
+          disabled: false,
+          to: '/',
+        },
+        {
+          text: 'about',
+          disabled: false,
+          to: '/about',
+
+        },
+        {
+          text: 'news',
+          disabled: false,
+          to: '/news',
+        },
+        {
+          text: 'production',
+          disabled: false,
+          to: '/production',
+        },
+        {
+          text: 'contacts',
+          disabled: false,
+          to: '/contacts',
+        },
+        {
+          text: 'partners',
+          disabled: false,
+          to: '/partners',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
-
-<style>
-
-.crumbs__link {
-  text-decoration: none;
-}
-
-</style>
