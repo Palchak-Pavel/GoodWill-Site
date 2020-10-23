@@ -5,16 +5,80 @@
 $colorCorporate: #0D47A1;
 
 
-@mixin size-window{
+@mixin padding_zero_from_product_text {
+  .v-card__text {
+    padding: 0;
+  }
+}
+
+@mixin size-window {
   min-height: 88vh;
 }
-@mixin padding_production_content{
+
+@mixin padding_production_content {
   padding-left: 10px;
   padding-right: 10px;
 }
-@mixin adaptiv_font_heading{
-  font-size: calc(14px + 8 * (100vw /1264));
+
+@mixin adaptiv_font_heading {
+  font-size: calc(14px + 8 * (100vw / 1264));
 }
-@mixin adaptiv_font_content_text{
-  font-size: calc(12px + 4 * (100vw /1264));
+
+@mixin adaptiv_font_content_text {
+  font-size: calc(12px + 4 * (100vw / 1264));
+}
+
+@mixin animation_product_card {
+  .titleTransition-enter-active {
+    animation: slideUp 1.5s;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(-40vh)
+    }
+    to {
+      transform: translateY(0)
+    }
+  }
+
+  .titleTransition-leave-active {
+    animation: slideDown 1.5s;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(0)
+    }
+    to {
+      transform: translateY(40vh)
+    }
+  }
+
+  .imgTransition-enter-active {
+    animation: slideIn 1.5s;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-70vw)
+    }
+    to {
+      transform: translateX(0)
+    }
+  }
+
+  .imgTransition-leave-active {
+    animation: slideOut 1.5s;
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0)
+    }
+    to {
+      transform: translateX(70vw)
+    }
+  }
+
 }
