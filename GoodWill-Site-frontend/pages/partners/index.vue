@@ -1,22 +1,33 @@
 <template>
   <v-card flat class="partnersWrap">
     <v-row>
-      <v-col
-      >
+      <v-col>
         <v-form>
-        <transition
-          name="fade"
-          mode="out-in"
-          appear>
-          <v-autocomplete
-            outlined
-            v-model="search"
-            :items="filteredCities"
-            item-text="city"
-            label="Город">
-          </v-autocomplete>
-        </transition>
+          <transition
+            name="fade"
+            mode="out-in"
+            appear>
+            <v-autocomplete
+              outlined
+              v-model="search"
+              :items="filteredCities"
+              item-text="city"
+              label="Город">
+            </v-autocomplete>
+          </transition>
         </v-form>
+
+
+        <v-data-table
+          items-per-page-all-text="Все"
+          items-per-page-text="Кол-во"
+          :headers="headers"
+          :items="filteredCustomer"
+          :items-per-page="5"
+        ></v-data-table>
+
+      <partnerTable/>
+
       </v-col>
     </v-row>
     <v-card flat class="mapGoogle">
@@ -33,15 +44,31 @@
 </template>
 
 <script>
+import partnerTable from "../../components/partnerTable";
 
 export default {
   name: "partners",
   data() {
     return {
+      headers: [
+        // {
+        //   text: 'Dessert (100g serving)',
+        //   align: 'start',
+        //   sortable: false,
+        //   value: 'name',
+        // },
+        { text: 'Клиент', value: 'customer' },
+        { text: 'Тип клиента', value: 'customerType' },
+      ],
+
       search: "",
       cities: [],
-      title: 'Партнёры'
-    };
+      customer: [],
+      title: 'Партнёры',
+    }
+  },
+  components:{
+    partnerTable,
   },
   head() {
     return {
@@ -56,7 +83,7 @@ export default {
     }
   },
 
-  async created() {
+  async created(){
     try {
       const res = await this.$axios.get('http://192.168.0.155:8080/salesapi/api/cities')
       this.cities = res.data;
@@ -69,12 +96,23 @@ export default {
       return this.cities.filter(city => {
         return city.city.toUpperCase().match(this.search.toUpperCase())
       });
+    },
+    filteredCustomer(){
+      return this.cities.filter(customer => {
+        return customer.city
+      })
     }
-  }
+  },
+  watch:{
+    cities(){
+      console.log(this.city)
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+
 .fade-enter-active {
   animation: slideIn 1.5s;
 }
