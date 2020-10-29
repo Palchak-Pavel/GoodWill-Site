@@ -2,8 +2,9 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
-$colorCorporate: #0D47A1;
 
+
+$colorCorporate: #0D47A1;
 
 @mixin padding_zero_from_product_text {
   .v-card__text {
@@ -29,16 +30,18 @@ $colorCorporate: #0D47A1;
 }
 
 @mixin animation_product_card {
+
+
   .titleTransition-enter-active {
     animation: slideUp 1.5s;
   }
 
   @keyframes slideUp {
     from {
-      transform: translateY(-40vh)
+      transform: translate(-25vw, -40vh);
     }
     to {
-      transform: translateY(0)
+      transform: translate(0)
     }
   }
 
@@ -48,10 +51,10 @@ $colorCorporate: #0D47A1;
 
   @keyframes slideDown {
     from {
-      transform: translateY(0)
+      transform: translate(0)
     }
     to {
-      transform: translateY(40vh)
+      transform: translate(40vh)
     }
   }
 
@@ -80,5 +83,4 @@ $colorCorporate: #0D47A1;
       transform: translateX(70vw)
     }
   }
-
 }

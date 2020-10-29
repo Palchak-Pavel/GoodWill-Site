@@ -1,6 +1,6 @@
 <template>
   <v-card flat class="containerWrap">
-    <transition name="titleTransition" appear>
+    <transition name="titleTransition"  appear>
       <v-card-title>
         <h2>Воздушные фильтры</h2>
       </v-card-title>

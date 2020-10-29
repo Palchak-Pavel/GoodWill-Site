@@ -106,6 +106,7 @@ export default {
 
   .subtitle {
     @include adaptiv_font_content_text;
+    line-height: 1.5;
   }
 
   .contactPhone {

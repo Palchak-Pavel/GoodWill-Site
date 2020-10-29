@@ -113,34 +113,34 @@ export default {
 
 <style lang="scss" scoped>
 
-.fade-enter-active {
-  animation: slideIn 1.5s;
-}
-
-.fade-leave, .fade-leave-to {
-}
-
-.fade-leave-active {
-  animation: slideOut 1.5s;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(20vw)
-  }
-  to {
-    transform: translateX(0)
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateX(0)
-  }
-  to {
-    transform: translateX(-20vw)
-  }
-}
+//.fade-enter-active {
+//  animation: slideIn 1.5s;
+//}
+//
+//.fade-leave, .fade-leave-to {
+//}
+//
+//.fade-leave-active {
+//  animation: slideOut 1.5s;
+//}
+//
+//@keyframes slideIn {
+//  from {
+//    transform: translateX(20vw)
+//  }
+//  to {
+//    transform: translateX(0)
+//  }
+//}
+//
+//@keyframes slideOut {
+//  from {
+//    transform: translateX(0)
+//  }
+//  to {
+//    transform: translateX(-20vw)
+//  }
+//}
 
 .partnersWrap {
   @include size-window;

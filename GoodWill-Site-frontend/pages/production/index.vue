@@ -23,8 +23,7 @@
 
     <transition
       name="fade"
-      mode="out-in"
-      appear>
+      mode="out-in">
       <component :is="component"></component>
     </transition>
 

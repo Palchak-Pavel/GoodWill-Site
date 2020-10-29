@@ -7,12 +7,12 @@
       class="fill-height">
       <v-col
         cols="12" lg="8"
-        class="fill-height col-layout">
+        class="fill-height col-layout rounded-lg">
         <menuBar/>
         <breadcrumbs/>
         <v-main class="mainContent">
-          <transition name="fade" >
-          <nuxt/>
+          <transition name="fade" appear>
+            <nuxt/>
           </transition>
         </v-main>
         <footerSite/>
@@ -57,15 +57,24 @@ export default {
 </script>
 
 <style lang="scss">
-.col-layout{
-  padding: 0;
+
+#app{
+ background-image: url("../assets/base.png");
 }
+
+.col-layout {
+  padding: 0;
+  background-color: white;
+}
+
 .fade-enter {
   opacity: 0;
 }
+
 .fade-enter-active {
   transition: opacity 1.5s ease;
 }
+
 .fade-leave-active {
   transition: opacity 1.5s ease;
   opacity: 0;

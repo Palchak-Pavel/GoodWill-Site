@@ -18,7 +18,10 @@
           class="pt-2 pb-0"
           cols="md-2 sm-12"
           color="indigo darken-4">
-          <v-card flat color="indigo darken-4" class="phoneNamber text-center">
+          <v-card
+            flat
+            color="indigo darken-4"
+            class="phoneNamber text-center">
             <v-card-text>
               <p>+7 495 651-0958</p>
               <p>+7 495 662-8429</p>
@@ -138,7 +141,7 @@ export default {
     p {
       margin-bottom: 5px;
       font-size: 14px;
-      }
+    }
   }
 
   .linksItem {
