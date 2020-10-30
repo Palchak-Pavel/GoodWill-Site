@@ -1,23 +1,25 @@
 <template>
   <v-row justify="center" class="production">
-    <v-col cols="md-12 sm-8" class="tabsWrap">
-      <v-btn depressed class="btnTabs" @click="component='eco_filters'">
+    <v-col cols="md-12 sm-12" class="tabsWrap">
+      <v-btn color="indigo lighten-5" depressed class="btnTabs" @click="component='eco_filters'">
         Воздушные
       </v-btn>
-      <v-btn depressed class="btnTabs" @click="component='fuel_filters'">
+      <v-btn color="indigo lighten-5" depressed class="btnTabs" @click="component='fuel_filters'">
         Топливные
       </v-btn>
-      <v-btn depressed class="btnTabs" @click="component='oil_filters'">
+      <v-btn color="indigo lighten-5" depressed class="btnTabs" @click="component='oil_filters'">
         Масляные
       </v-btn>
-      <v-btn depressed class="btnTabs" @click="component='salon_filters'">
+      <v-btn color="indigo lighten-5" depressed class="btnTabs" @click="component='salon_filters'">
         Салонные
       </v-btn>
-      <v-btn depressed class="btnTabs" @click="component='shetki'">
-        Щетки стеклоочистителей
+      <v-btn color="indigo lighten-5"  depressed class="btnTabs" @click="component='shetki'">
+        Щетки<br/>
+        стеклоочистителей
       </v-btn>
-      <v-btn depressed class="btnTabs" @click="component='tk'">
-        Тормозные колодки
+      <v-btn color="indigo lighten-5"  depressed class="btnTabs" @click="component='tk'">
+        Тормозные <br/>
+        колодки
       </v-btn>
     </v-col>
 
@@ -104,9 +106,17 @@ export default {
 .production {
   @include size-window;
 
-  .btnTabs {
-    color: $colorCorporate;
-    margin-bottom: 4px;
+  .tabsWrap {
+
+    .btnTabs {
+      flex-grow: 1;
+      margin: 5px;
+      color: $colorCorporate;
+      height: 60px;
+      border-color: #C5CAE9;
+    }
   }
 }
+
+
 </style>

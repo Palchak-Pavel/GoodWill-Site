@@ -17,7 +17,6 @@
           </transition>
         </v-form>
 
-
         <v-data-table
           items-per-page-all-text="Все"
           items-per-page-text="Кол-во"

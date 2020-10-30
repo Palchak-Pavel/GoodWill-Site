@@ -6,7 +6,7 @@
       justify="center"
       class="fill-height">
       <v-col
-        cols="12" lg="8"
+        cols="12" md="12" lg="8" xl="7"
         class="fill-height col-layout rounded-lg">
         <menuBar/>
         <breadcrumbs/>
