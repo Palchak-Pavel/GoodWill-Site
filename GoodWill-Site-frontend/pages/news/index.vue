@@ -6,6 +6,10 @@
         <h3> {{ newItem.heading }}</h3>
       </v-card-title>
 
+      <template v-slot:footer>
+        Footer v-slot <strong>code</strong>
+      </template>
+
       <v-banner
         :elevation="2 -1"
         class="bannerDescription rounded-r-xl"

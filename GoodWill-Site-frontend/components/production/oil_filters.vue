@@ -72,6 +72,7 @@ export default {
     float: left;
     margin: 5px 10px 0 0;
     width: 50%;
+    max-width: 800px;
   }
 
   .textProduct {

@@ -42,23 +42,23 @@
       </v-toolbar-items>
     </v-toolbar>
 
-    <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      height="80vh">
-      <v-list
-        nav>
-        <v-list-item-group
-          v-model="group"
-          active-class="text--accent-4"
-          color="indigo">
-          <v-list-item
-            v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">
-            {{ item.title }}
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
+<!--    <v-navigation-drawer-->
+<!--      v-model="drawer"-->
+<!--      absolute-->
+<!--      height="80vh">-->
+<!--      <v-list-->
+<!--        nav>-->
+<!--        <v-list-item-group-->
+<!--          v-model="group"-->
+<!--          active-class="text&#45;&#45;accent-4"-->
+<!--          color="indigo">-->
+<!--          <v-list-item-->
+<!--            v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">-->
+<!--            {{ item.title }}-->
+<!--          </v-list-item>-->
+<!--        </v-list-item-group>-->
+<!--      </v-list>-->
+<!--    </v-navigation-drawer>-->
   </v-card>
 </template>
 

@@ -6,7 +6,7 @@
       justify="center"
       class="fill-height">
       <v-col
-        cols="12" md="12" lg="8" xl="7"
+        cols="12"  lg="12"
         class="fill-height col-layout rounded-lg">
         <menuBar/>
         <breadcrumbs/>
@@ -57,10 +57,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-#app{
- background-image: url("../assets/base.png");
-}
 
 .col-layout {
   padding: 0;

@@ -1,23 +1,25 @@
 <template>
   <v-card class="homeWrap" flat>
-    <v-container>
-      <slider/>
-    </v-container>
-    <router-link class="linkNewsDetailed" :to="newsDetailed.href">
-      <v-row
-        align="start" justify="center">
-        <v-col
-          cols="10" md="5"
-          v-for="newItem of latestNews"
-          :key="newItem.id"
-          class="newsCard">
+
+      <v-card flat class="slider">
+        <slider/>
+      </v-card>
+
+    <v-row
+      align="start" justify="center">
+      <v-col
+        cols="10" md="12"
+        v-for="newItem of latestNews"
+        :key="newItem.id"
+        class="newsCard">
+        <router-link class="linkNewsDetailed" :to="newsDetailed.href">
           <h4> {{ newItem.heading }} </h4>
           <v-banner class="cardDescription">
             {{ newItem.title }}
           </v-banner>
-        </v-col>
-      </v-row>
-    </router-link>
+        </router-link>
+      </v-col>
+    </v-row>
   </v-card>
 </template>
 
@@ -63,6 +65,7 @@ export default {
 <style lang="scss">
 .homeWrap {
   @include size-window;
+  display: flex;
 
   .linkNewsDetailed {
     text-decoration: none;
@@ -77,6 +80,17 @@ export default {
       margin: 0 auto;
       padding: 5px;
     }
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .homeWrap {
+    flex-direction: column;
+  }
+  .slider{
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

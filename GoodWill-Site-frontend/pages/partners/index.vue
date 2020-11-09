@@ -84,7 +84,7 @@ export default {
 
   async created(){
     try {
-      const res = await this.$axios.get('http://192.168.0.155:8080/salesapi/api/cities')
+      const res = await this.$axios.get('http://api.goodfil.com/sales-test2/api/cities')
       this.cities = res.data;
     } catch (e) {
       console.error(e);

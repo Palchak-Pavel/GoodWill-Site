@@ -31,7 +31,7 @@ export default {
   name: "fuel_filters",
   data() {
     return {
-      image: require('~/assets/filters/airFilters.jpg'),
+      image: require('~/assets/filters/fuelFilters.jpg'),
     }
   },
 }
@@ -52,6 +52,7 @@ export default {
     float: left;
     margin: 5px 10px 0 0;
     width: 50%;
+    max-width: 800px;
   }
 
   .textProduct {

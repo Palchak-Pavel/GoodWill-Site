@@ -13,7 +13,8 @@ $colorCorporate: #0D47A1;
 }
 
 @mixin size-window {
-  min-height: 88vh;
+  min-height: calc(100vh - 265px);
+
 }
 
 @mixin padding_production_content {
@@ -33,12 +34,12 @@ $colorCorporate: #0D47A1;
 
 
   .titleTransition-enter-active {
-    animation: slideUp 1.5s;
+    animation: slideUp 1s ease;
   }
 
   @keyframes slideUp {
     from {
-      transform: translate(-25vw, -40vh);
+      transform: translate(-30vw, -40vh);
     }
     to {
       transform: translate(0)
@@ -46,7 +47,7 @@ $colorCorporate: #0D47A1;
   }
 
   .titleTransition-leave-active {
-    animation: slideDown 1.5s;
+    animation: slideDown 1s ease;
   }
 
   @keyframes slideDown {
@@ -59,28 +60,28 @@ $colorCorporate: #0D47A1;
   }
 
   .imgTransition-enter-active {
-    animation: slideIn 1.5s;
+    animation: slideIn 1s ease;
   }
 
   @keyframes slideIn {
     from {
-      transform: translateX(-70vw)
+      transform: translate(-50vw)
     }
     to {
-      transform: translateX(0)
+      transform: translate(0)
     }
   }
 
   .imgTransition-leave-active {
-    animation: slideOut 1.5s;
+    animation: slideOut 1s ease;
   }
 
   @keyframes slideOut {
     from {
-      transform: translateX(0)
+      transform: translate(0)
     }
     to {
-      transform: translateX(70vw)
+      transform: translate(50vw)
     }
   }
 }

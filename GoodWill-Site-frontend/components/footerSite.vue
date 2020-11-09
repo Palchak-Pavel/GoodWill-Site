@@ -95,32 +95,7 @@ export default {
       url: ('https://www.instagram.com/goodwill.social/?hl=ru'),
     }
   }),
-  // data() {
-  //   return {
-  //     links: [
-  //       {
-  //         name: 'tecalliance',
-  //         imgLink: require("~/assets/logo/tecalliance.png"),
-  //         url: ('https://www.tecalliance.net/en/" target="_blank'),
-  //       },
-  //       {
-  //         name: 'drive2',
-  //         imgLink: require("~/assets/logo/drive2.png"),
-  //         url: ('https://www.drive2.ru/o/goodwillsocial'),
-  //       },
-  //       {
-  //         name: 'youtube',
-  //         imgLink: require("~/assets/logo/youtube.png"),
-  //         url: ('https://www.youtube.com/channel/UCXrehcqVbuxLYxV1ejm3sXg?view_as=subscriber'),
-  //       },
-  //       {
-  //         name: 'instagramm',
-  //         imgLink: require('~/assets/logo/instagramm.png'),
-  //         url: ('https://www.instagram.com/goodwill.social/?hl=ru'),
-  //       }
-  //     ]
-  //   }
-  // },
+
   components: {
     write_a_letter,
   }
@@ -137,6 +112,7 @@ export default {
 }
 
 .footerWrap {
+
   .phoneNamber {
     p {
       margin-bottom: 5px;
