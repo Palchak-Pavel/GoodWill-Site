@@ -37,7 +37,6 @@
         <!--catalog------------>
         <catalog/>
         <!--Вход пользователя-->
-        <logIn/>
         <!---->
       </v-toolbar-items>
     </v-toolbar>
