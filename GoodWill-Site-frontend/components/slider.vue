@@ -181,8 +181,8 @@ export default {
     align-items: center;
 
     .colorSlideWrap {
-      width: 22vw;
-      height: 22vw;
+      width: 30vw;
+      height: 30vw;
       background-color: $colorCorporate;
       border-radius: 50% 50% 50% 50%;
       margin-left: -30%;
@@ -191,20 +191,20 @@ export default {
       .imgProduct {
         display: flex;
         align-items: center;
-        width: 22vw;
-        height: 22vw;
+        width: 30vw;
+        height: 30vw;
         transition-duration: .5s;
       }
 
       .imgProduct:hover {
-        width: 23vw;
-        height: 23vw;
+        width: 32vw;
+        height: 32vw;
       }
     }
 
     .imagesBackground {
-      width: 13vw;
-      height: 13vw;
+      width: 18vw;
+      height: 18vw;
       margin-top: -35%;
       margin-left: 15%;
       z-index: 0;
