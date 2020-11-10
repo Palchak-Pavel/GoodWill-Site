@@ -1,4 +1,6 @@
 <template>
+
+
   <v-card class="homeWrap" flat>
 
       <v-card flat class="slider">
@@ -8,7 +10,7 @@
     <v-row
       align="start" justify="center">
       <v-col
-        cols="10" md="12"
+        cols="12" md="8"
         v-for="newItem of latestNews"
         :key="newItem.id"
         class="newsCard">
@@ -21,6 +23,7 @@
       </v-col>
     </v-row>
   </v-card>
+
 </template>
 
 <script>
@@ -66,7 +69,9 @@ export default {
 .homeWrap {
   @include size-window;
   display: flex;
-
+h2{
+  color: $colorCorporate;
+}
   .linkNewsDetailed {
     text-decoration: none;
 

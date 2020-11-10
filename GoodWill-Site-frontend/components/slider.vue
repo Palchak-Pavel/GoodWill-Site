@@ -3,20 +3,28 @@
     <div class="btnSlideWrap">
       <v-btn icon @click="changeImage(0)" class="btnSlide" depressed>
         <v-img :src="btnImg[0]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle">Воздушные</p>
       </v-btn>
       <v-btn icon @click="changeImage(1)" class="btnSlide" depressed>
         <v-img :src="btnImg[1]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle">Топливные</p>
       </v-btn>
       <v-btn icon @click="changeImage(2)" class="btnSlide" depressed>
         <v-img :src="btnImg[2]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle">Масляные</p>
       </v-btn>
       <v-btn icon @click="changeImage(3)" class="btnSlide" depressed>
         <v-img :src="btnImg[3]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle">Салонные</p>
       </v-btn>
       <v-btn icon @click="changeImage(4)" class="btnSlide" depressed>
         <v-img :src="btnImg[4]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle">Стеклоочистители</p>
       </v-btn>
-      <v-btn @click="changeImage(5)" class="btnSlide" depressed><p class="textBtn">ТК</p></v-btn>
+      <v-btn icon @click="changeImage(5)" class="btnSlide" depressed>
+        <v-img :src="btnImg[5]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle">ТК</p>
+      </v-btn>
     </div>
 
 
@@ -40,7 +48,7 @@
     </div>
   </div>
 </template>
-3
+
 <script>
 export default {
   data() {
@@ -71,6 +79,7 @@ export default {
         require('~/assets/filters/filterAsakashi/btn/oil.png'),
         require('~/assets/filters/filterAsakashi/btn/cabin.png'),
         require('~/assets/filters/filterAsakashi/btn/transmission.png'),
+        require('~/assets/filters/filterAsakashi/btn/transmission.png'),
       ],
     }
   },
@@ -88,14 +97,21 @@ export default {
   display: flex;
   align-items: center;
 
+
   .btnSlideWrap {
+    margin-left: 5vw;
+
     .btnSlide {
       display: flex;
+      flex-direction: column;
       max-width: 3vw;
-      margin: 3vw;
+      margin: 4vw;
+      color: $colorCorporate;
 
-      .textBtn {
-        margin: 1%;
+      .titleImgToggle {
+        position: absolute;
+        margin-top: 2.7vw;
+        font-size: calc(9px + 2 * (100vw / 800));
       }
     }
   }
@@ -138,15 +154,14 @@ export default {
 
 
 @media (min-width: 1250px) {
-  .textBtn {
-    font-size: 1vw;
-  }
+
+
 }
 
 @media (max-width: 800px) {
   .slideWrap {
     display: block;
-    margin: 0;
+    margin-top: 5vw;
 
     .imgBlock {
       justify-content: center;
@@ -167,6 +182,9 @@ export default {
     .btnSlide {
       display: flex;
       margin: 0;
+    }
+    .titleImgToggle {
+    display: none;
     }
   }
 }

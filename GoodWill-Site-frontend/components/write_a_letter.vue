@@ -3,7 +3,7 @@
     <v-dialog light v-model="dialog" max-width="50vw">
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          elevation="5"
+          elevation="0"
           small
           class="letterBtn"
           light
@@ -12,6 +12,8 @@
           Написать письмо
         </v-btn>
       </template>
+
+      <v-form v-model="formValidity">
       <v-card>
         <v-card-text>
           <v-container>
@@ -64,9 +66,10 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn dark color="blue darken-4" @click="dialog = false">Отправить</v-btn>
+          <v-btn  color="blue darken-4" :disabled="!formValidity" @click="dialog = false"><p class="submit">Отправить</p></v-btn>
         </v-card-actions>
       </v-card>
+      </v-form>
     </v-dialog>
   </v-row>
 </template>
@@ -77,11 +80,14 @@ export default {
   name: "write_a_letter",
   data() {
     return {
+      formValidity:false,
       dialog: false,
-      nameRules: [
-        v => !!v || 'Обязательное поле для ввода',
-      ],
+      email: '',
       emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+      nameRules: [
         v => !!v || 'Обязательное поле для ввода',
       ],
       cityRules: [
@@ -99,6 +105,11 @@ export default {
 </script>
 
 <style lang="scss">
+.submit{
+  text-align: center;
+  margin-top: 20%;
+  color: #fff;
+}
 .letterBtn {
   width: 140px;
   color: $colorCorporate !important;
