@@ -44,11 +44,11 @@
       </div>
       <div class="slideWrapItem">
         <v-img :src="btnImg[4]" @click="changeImage(4)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle" @click="changeImage(4)">Стеклоочистители</p>
+        <p class="titleImgToggle" @click="changeImage(4)">Щетки <br/> стеклоочистителей</p>
       </div>
       <div class="slideWrapItem">
         <v-img :src="btnImg[5]" @click="changeImage(5)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle" @click="changeImage(5)">ТК</p>
+        <p class="titleImgToggle" @click="changeImage(5)">Тормозные <br/> колодки</p>
       </div>
     </div>
 
@@ -122,6 +122,7 @@ export default {
   color: $colorCorporate;
   font-size: calc(12px + 4 * (100vw / 1200));
   cursor: pointer;
+  text-align: center;
 }
 
 .slideWrap {
