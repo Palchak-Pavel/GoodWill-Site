@@ -1,30 +1,55 @@
 <template>
   <div class="slideWrap">
     <div class="btnSlideWrap">
-      <v-btn icon @click="changeImage(0)" class="btnSlide" depressed>
+
+      <!--      <v-btn icon @click="changeImage(0)" class="btnSlide" depressed>-->
+      <!--        <v-img :src="btnImg[0]" @click="changeImage(0)" class="btnSlide" depressed></v-img>-->
+      <!--        <p class="titleImgToggle">Воздушные</p>-->
+      <!--      </v-btn>  <v-btn icon @click="changeImage(1)" class="btnSlide" depressed>-->
+      <!--        <v-img :src="btnImg[1]" @click="changeImage(0)" class="btnSlide" depressed></v-img>-->
+      <!--        <p class="titleImgToggle">Топливные</p>-->
+      <!--      </v-btn>-->
+      <!--      <v-btn icon @click="changeImage(2)" class="btnSlide" depressed>-->
+      <!--        <v-img :src="btnImg[2]" @click="changeImage(0)" class="btnSlide" depressed></v-img>-->
+      <!--        <p class="titleImgToggle">Масляные</p>-->
+      <!--      </v-btn>-->
+      <!--      <v-btn icon @click="changeImage(3)" class="btnSlide" depressed>-->
+      <!--        <v-img :src="btnImg[3]" @click="changeImage(0)" class="btnSlide" depressed></v-img>-->
+      <!--        <p class="titleImgToggle">Салонные</p>-->
+      <!--      </v-btn>-->
+      <!--      <v-btn icon @click="changeImage(4)" class="btnSlide" depressed>-->
+      <!--        <v-img :src="btnImg[4]" @click="changeImage(0)" class="btnSlide" depressed></v-img>-->
+      <!--        <p class="titleImgToggle">Стеклоочистители</p>-->
+      <!--      </v-btn>-->
+      <!--      <v-btn icon @click="changeImage(5)" class="btnSlide" depressed>-->
+      <!--        <v-img :src="btnImg[5]" @click="changeImage(0)" class="btnSlide" depressed></v-img>-->
+      <!--        <p class="titleImgToggle">ТК</p>-->
+      <!--      </v-btn>-->
+
+      <div class="slideWrapItem">
         <v-img :src="btnImg[0]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle">Воздушные</p>
-      </v-btn>
-      <v-btn icon @click="changeImage(1)" class="btnSlide" depressed>
-        <v-img :src="btnImg[1]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle">Топливные</p>
-      </v-btn>
-      <v-btn icon @click="changeImage(2)" class="btnSlide" depressed>
-        <v-img :src="btnImg[2]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle">Масляные</p>
-      </v-btn>
-      <v-btn icon @click="changeImage(3)" class="btnSlide" depressed>
-        <v-img :src="btnImg[3]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle">Салонные</p>
-      </v-btn>
-      <v-btn icon @click="changeImage(4)" class="btnSlide" depressed>
-        <v-img :src="btnImg[4]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle">Стеклоочистители</p>
-      </v-btn>
-      <v-btn icon @click="changeImage(5)" class="btnSlide" depressed>
-        <v-img :src="btnImg[5]" @click="changeImage(0)" class="btnSlide" depressed></v-img>
-        <p class="titleImgToggle">ТК</p>
-      </v-btn>
+        <p class="titleImgToggle" @click="changeImage(0)">Воздушные</p>
+      </div>
+      <div class="slideWrapItem">
+        <v-img :src="btnImg[1]" @click="changeImage(1)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle" @click="changeImage(1)">Топливные</p>
+      </div>
+      <div class="slideWrapItem">
+        <v-img :src="btnImg[2]" @click="changeImage(2)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle" @click="changeImage(2)">Масляные</p>
+      </div>
+      <div class="slideWrapItem">
+        <v-img :src="btnImg[3]" @click="changeImage(3)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle" @click="changeImage(3)">Салонные</p>
+      </div>
+      <div class="slideWrapItem">
+        <v-img :src="btnImg[4]" @click="changeImage(4)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle" @click="changeImage(4)">Стеклоочистители</p>
+      </div>
+      <div class="slideWrapItem">
+        <v-img :src="btnImg[5]" @click="changeImage(5)" class="btnSlide" depressed></v-img>
+        <p class="titleImgToggle" @click="changeImage(5)">ТК</p>
+      </div>
     </div>
 
 
@@ -93,25 +118,59 @@ export default {
 </script>
 
 <style lang="scss">
+.titleImgToggle{
+  color: $colorCorporate;
+  font-size: calc(12px + 4 * (100vw / 1200));
+  cursor: pointer;
+}
+
 .slideWrap {
   display: flex;
   align-items: center;
 
-
+  //
+  //.btnSlideWrap {
+  //  margin-left: 5vw;
+  //
+  //  .btnSlide {
+  //    display: flex;
+  //    flex-direction: column;
+  //    max-width: 3vw;
+  //    margin: 4vw;
+  //    color: $colorCorporate;
+  //    cursor: pointer;
+  //
+  //    .titleImgToggle {
+  //      position: absolute;
+  //      margin-top: -25%;
+  //      font-size: calc(9px + 2 * (100vw / 800));
+  //    }
+  //  }
+  //}
   .btnSlideWrap {
     margin-left: 5vw;
 
-    .btnSlide {
+    .slideWrapItem {
       display: flex;
       flex-direction: column;
-      max-width: 3vw;
-      margin: 4vw;
-      color: $colorCorporate;
+      align-items: center;
 
-      .titleImgToggle {
-        position: absolute;
-        margin-top: 2.7vw;
-        font-size: calc(9px + 2 * (100vw / 800));
+      .btnSlide {
+        max-width: 3vw;
+        margin: 1vw 1vw .3vw 1vw;
+        //color: $colorCorporate;
+        cursor: pointer;
+        .titleImgToggle{
+          cursor: pointer;
+          color: red;
+        }
+
+        a {
+          //font-size: calc(9px + 2 * (100vw / 800));
+          color: red;
+          background: #0D47A1;
+
+        }
       }
     }
   }
@@ -152,12 +211,6 @@ export default {
   }
 }
 
-
-@media (min-width: 1250px) {
-
-
-}
-
 @media (max-width: 800px) {
   .slideWrap {
     display: block;
@@ -175,18 +228,20 @@ export default {
 
     .btnSlideWrap {
       display: flex;
+      justify-content: space-between;
       flex-direction: row;
-      margin: 0;
+      margin-bottom: 30px;
+
     }
 
-    .btnSlide {
-      display: flex;
-      margin: 0;
-    }
+
     .titleImgToggle {
-    display: none;
+      display: none;
     }
   }
+    //.btnSlide {
+    //  margin: 4vw;
+    //}
 }
 
 //.slideTransition-enter {
