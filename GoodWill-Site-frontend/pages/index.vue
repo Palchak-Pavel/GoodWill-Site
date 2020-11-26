@@ -1,27 +1,30 @@
 <template>
-
-
   <v-card class="homeWrap" flat>
-
+    <v-container>
       <v-card flat class="slider">
-        <slider/>
+        <transition name="slideTransition" appear mode="out-in">
+          <slider/>
+        </transition>
       </v-card>
+    </v-container>
 
-    <v-row
-      align="start" justify="center">
-      <v-col
-        cols="12" md="8"
-        v-for="newItem of latestNews"
-        :key="newItem.id"
-        class="newsCard">
-        <router-link class="linkNewsDetailed" :to="newsDetailed.href">
-          <h4> {{ newItem.heading }} </h4>
-          <v-banner class="cardDescription">
-            {{ newItem.title }}
-          </v-banner>
-        </router-link>
-      </v-col>
-    </v-row>
+    <v-container>
+      <v-row
+        align="start" justify="center">
+        <v-col
+          cols="12" md="8"
+          v-for="newItem of latestNews"
+          :key="newItem.id"
+          class="newsCard">
+          <router-link class="linkNewsDetailed" :to="newsDetailed.href">
+            <h4> {{ newItem.heading }} </h4>
+            <v-banner class="cardDescription">
+              {{ newItem.title }}
+            </v-banner>
+          </router-link>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-card>
 
 </template>
@@ -69,9 +72,15 @@ export default {
 .homeWrap {
   @include size-window;
   display: flex;
-h2{
-  color: $colorCorporate;
-}
+
+  .slider {
+    //margin-right: 2vw;
+  }
+
+  h2 {
+    color: $colorCorporate;
+  }
+
   .linkNewsDetailed {
     text-decoration: none;
 
@@ -81,9 +90,6 @@ h2{
       .cardDescription {
         margin: 5px;
       }
-
-      margin: 0 auto;
-      padding: 5px;
     }
   }
 }
@@ -93,9 +99,22 @@ h2{
   .homeWrap {
     flex-direction: column;
   }
-  .slider{
+  .slider {
     display: flex;
     justify-content: center;
   }
+}
+
+.slideTransition-enter {
+  opacity: 0;
+}
+
+.slideTransition-enter-active {
+  transition: opacity 2s ease;
+}
+
+.slideTransition-leave-active {
+  transition: opacity 2s ease;
+  opacity: 0;
 }
 </style>

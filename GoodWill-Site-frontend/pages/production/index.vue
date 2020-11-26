@@ -13,11 +13,11 @@
       <v-btn color="indigo lighten-5" depressed class="btnTabs" @click="component='salon_filters'">
         Салонные
       </v-btn>
-      <v-btn color="indigo lighten-5"  depressed class="btnTabs" @click="component='shetki'">
+      <v-btn color="indigo lighten-5" depressed class="btnTabs" @click="component='shetki'">
         Щетки<br/>
         стеклоочистителей
       </v-btn>
-      <v-btn color="indigo lighten-5"  depressed class="btnTabs" @click="component='tk'">
+      <v-btn color="indigo lighten-5" depressed class="btnTabs" @click="component='tk'">
         Тормозные <br/>
         колодки
       </v-btn>
@@ -26,7 +26,7 @@
     <transition
       name="fade"
       mode="out-in">
-      <component :is="component"></component>
+      <component :is="component" ></component>
     </transition>
 
   </v-row>
@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       title: 'Продукция',
-      component: 'eco_filters'
+      component: 'eco_filters',
     }
   },
   components: {
@@ -58,6 +58,19 @@ export default {
     shetki,
     tk,
   },
+
+  created() {
+    this.$route.params.category
+  },
+  mounted() {
+    this.component = this.$route.params.category
+  },
+  watch: {
+    '$route.params.category'(category) {
+      this.component = this.params(category)
+    }
+  },
+
   head() {
     return {
       title: this.title,
@@ -75,14 +88,14 @@ export default {
 
 <style lang="scss" scoped>
 .fade-enter-active {
-  animation: slideIn 1.5s;
+  animation: slideIn 1s;
 }
 
 .fade-leave, .fade-leave-to {
 }
 
 .fade-leave-active {
-  animation: slideOut 1.5s;
+  animation: slideOut 1s;
 }
 
 @keyframes slideIn {
