@@ -24,8 +24,7 @@
           :items="filteredCustomer"
           :items-per-page="5"
         ></v-data-table>
-
-      <partnerTable/>
+<!--      <partnerTable/>-->
 
       </v-col>
     </v-row>

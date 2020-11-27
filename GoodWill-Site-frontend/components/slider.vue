@@ -14,14 +14,14 @@
 
     <div class="imgBlock">
 
-      <nuxt-link :to="{ name: 'production', params: { category: currentCategory.name } }">
+      <nuxt-link :to="{ name: 'production', params: { category: categories[currentCategory].category } }">
         <img class="backgroundImageItem" alt="" :src="categories[currentCategory].backgroundImage">
-      <div class="colorSlideWrap">
+        <div class="colorSlideWrap">
 
-<!--<transition name="fade" mode="out-in">-->
-        <v-img alt="" class="slideItem" :src="categories[currentCategory].image"></v-img>
-<!--</transition>-->
-      </div>
+          <!--<transition name="fade" mode="out-in">-->
+          <img alt="" class="slideItem" :src="categories[currentCategory].image">
+          <!--</transition>-->
+        </div>
       </nuxt-link>
     </div>
   </div>
@@ -63,14 +63,14 @@ export default {
           name: 'Салонные'
         },
         {
-          category: 'shetki_filters',
+          category: 'shetki',
           image: require('~/assets/filters/filterAsakashi/shetki.jpg'),
           backgroundImage: require('~/assets/filters/filterAsakashi/background/slider-bg-cabin.png'),
           btnImage: require('~/assets/filters/filterAsakashi/btn/transmission.png'),
           name: 'Щетки стеклоочистителей'
         },
         {
-          category: 'tk_filters',
+          category: 'tk',
           image: require('~/assets/filters/filterAsakashi/tk.jpg'),
           backgroundImage: require('~/assets/filters/filterAsakashi/background/slider-bg-trans.png'),
           btnImage: require('~/assets/filters/filterAsakashi/btn/air.png'),
@@ -145,22 +145,32 @@ export default {
       border-radius: 50% 50% 50% 50%;
       margin-left: 20%;
 
-
       .slideItem {
         max-width: 24vw;
         max-height: 24vw;
         margin: 0 auto;
+        transition: all .3s ease-in-out;
+        animation-name: transitionImg;
+        animation-duration: 2s;
       }
-      .slideItem:hover{
+
+      .slideItem:hover {
         max-width: 25vw;
         max-height: 25vw;
-        transition: .5s ease;
+        transition: all .3s ease-in-out;
       }
     }
-
   }
 }
 
+@keyframes transitionImg {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
 
 //@media (max-width: 800px) {
 //  .slideWrap {

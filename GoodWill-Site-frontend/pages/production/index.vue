@@ -59,17 +59,14 @@ export default {
     tk,
   },
 
-  created() {
-    this.$route.params.category
-  },
+
   mounted() {
-    this.component = this.$route.params.category
+    if(this.$route.params.category){
+      this.component = this.$route.params.category}
+    else
+      this.component = "eco_filters"
   },
-  watch: {
-    '$route.params.category'(category) {
-      this.component = this.params(category)
-    }
-  },
+
 
   head() {
     return {
