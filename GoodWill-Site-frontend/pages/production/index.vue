@@ -49,6 +49,7 @@ export default {
       component: 'eco_filters',
     }
   },
+
   components: {
     Default,
     fuel_filters,
@@ -59,14 +60,12 @@ export default {
     tk,
   },
 
-
   mounted() {
     if(this.$route.params.category){
       this.component = this.$route.params.category}
     else
       this.component = "eco_filters"
   },
-
 
   head() {
     return {

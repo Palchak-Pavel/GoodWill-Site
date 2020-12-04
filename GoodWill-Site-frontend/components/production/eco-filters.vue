@@ -1,6 +1,6 @@
 <template>
   <v-card flat class="containerWrap">
-    <transition name="titleTransition"  appear>
+    <transition name="titleTransition" appear>
       <v-card-title>
         <h2>Воздушные фильтры</h2>
       </v-card-title>
@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: "ecoFilters",
+  name: "eco_filters",
   data() {
     return {
       image: require('~/assets/filters/ecoFilters.jpg'),

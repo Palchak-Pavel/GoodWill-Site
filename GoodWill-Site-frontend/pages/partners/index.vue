@@ -18,13 +18,17 @@
         </v-form>
 
         <v-data-table
-          items-per-page-all-text="Все"
-          items-per-page-text="Кол-во"
           :headers="headers"
-          :items="filteredCustomer"
-          :items-per-page="5"
-        ></v-data-table>
-<!--      <partnerTable/>-->
+          :items="filteredCustomer">
+          <template>
+            <tr>
+<!--              <td class="text-xs-right">{{ filteredCustomer.customer }}</td>-->
+<!--              <td class="text-xs-right">{{ filteredCustomer.customerType }}</td>-->
+              <td class="text-xs-right"></td>
+              <td class="text-xs-right"></td>
+            </tr>
+          </template>
+        </v-data-table>
 
       </v-col>
     </v-row>
@@ -42,35 +46,39 @@
 </template>
 
 <script>
-import partnerTable from "../../components/partnerTable";
 
 export default {
   name: "partners",
   data() {
     return {
-      headers: [
-        // {
-        //   text: 'Dessert (100g serving)',
-        //   align: 'start',
-        //   sortable: false,
-        //   value: 'name',
-        // },
-        { text: 'Клиент', value: 'customer' },
-        { text: 'Тип клиента', value: 'customerType' },
-      ],
-
+      model: null,
       search: "",
       cities: [],
-      customer: [],
-      title: 'Партнёры',
+      filteredCustomerString: "",
+      // filteredCustomer: [
+      // ],
+      // listItems: null,
+      // customer: [],
+      // title: 'Партнёры',
+
+      headers: [
+        {text: 'Клиент', value: 'customer'},
+        {text: 'Тип клиента', value: 'customerType'},
+      ],
+      filteredCustomerArr: [],
+      // filteredCustomer:[
+      //   {
+      //     customer: "",
+      //   },
+      //   {
+      //     customerType: "",
+      //   }
+      // ],
     }
   },
-  components:{
-    partnerTable,
-  },
+
   head() {
     return {
-      title: this.title,
       meta: [
         {
           hid: 'Хид Партнёры',
@@ -81,7 +89,7 @@ export default {
     }
   },
 
-  async created(){
+  async created() {
     try {
       const res = await this.$axios.get('http://api.goodfil.com/sales-test2/api/cities')
       this.cities = res.data;
@@ -96,49 +104,38 @@ export default {
       });
     },
     filteredCustomer(){
-      return this.cities.filter(customer => {
-        return customer.city
+      return this.filteredCustomerArr.filter(customer => {
+        return customer.filteredCustomerArr.match(this.filteredCustomerString)
       })
-    }
+    },
   },
-  watch:{
-    cities(){
-      console.log(this.city)
-    }
+
+  methods: {
+    // filteredCustomer(city) {
+    //   this.filteredCustomer.push(city)
+    // }
   },
+  mounted() {
+    // this.customer = this.cities.customer
+    // this.customerType = this.cities.customerType
+  },
+
+  // filteredCustomer() {
+  //   return this.cities
+  // },
+
+//     mounted () {
+//       axios
+//         .get('data.res')
+//         .then(response => (this.listItems = response.data))
+//     }
+// },
+
+
 }
 </script>
 
 <style lang="scss" scoped>
-
-//.fade-enter-active {
-//  animation: slideIn 1.5s;
-//}
-//
-//.fade-leave, .fade-leave-to {
-//}
-//
-//.fade-leave-active {
-//  animation: slideOut 1.5s;
-//}
-//
-//@keyframes slideIn {
-//  from {
-//    transform: translateX(20vw)
-//  }
-//  to {
-//    transform: translateX(0)
-//  }
-//}
-//
-//@keyframes slideOut {
-//  from {
-//    transform: translateX(0)
-//  }
-//  to {
-//    transform: translateX(-20vw)
-//  }
-//}
 
 .partnersWrap {
   @include size-window;

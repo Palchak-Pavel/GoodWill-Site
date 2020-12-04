@@ -81,6 +81,7 @@ export default {
   },
 
   methods: {
+
     changeImage(index) {
       this.currentCategory = index;
     },
@@ -149,9 +150,9 @@ export default {
         max-width: 24vw;
         max-height: 24vw;
         margin: 0 auto;
-        transition: all .3s ease-in-out;
         animation-name: transitionImg;
-        animation-duration: 2s;
+        transition: all .3s ease-in-out;
+        animation-duration: .5s;
       }
 
       .slideItem:hover {
