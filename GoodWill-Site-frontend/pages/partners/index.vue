@@ -11,19 +11,23 @@
               outlined
               v-model="search"
               :items="filteredCities"
+              :loading="loading"
               item-text="city"
-              label="Город">
+              label="Город"
+              @change="onSelectedProductCodeChange($event)"
+            >
             </v-autocomplete>
           </transition>
         </v-form>
 
         <v-data-table
           :headers="headers"
-          :items="filteredCustomer">
+          :items="items"
+        >
           <template>
             <tr>
-<!--              <td class="text-xs-right">{{ filteredCustomer.customer }}</td>-->
-<!--              <td class="text-xs-right">{{ filteredCustomer.customerType }}</td>-->
+              <!--              <td class="text-xs-right">{{ filteredCustomer.customer }}</td>-->
+              <!--              <td class="text-xs-right">{{ filteredCustomer.customerType }}</td>-->
               <td class="text-xs-right"></td>
               <td class="text-xs-right"></td>
             </tr>
@@ -52,28 +56,15 @@ export default {
   data() {
     return {
       model: null,
-      search: "",
-      cities: [],
-      filteredCustomerString: "",
-      // filteredCustomer: [
-      // ],
-      // listItems: null,
-      // customer: [],
-      // title: 'Партнёры',
+      search: null,
+      selectedProductCode: "",
+      loading: false,
+      items: [],
 
       headers: [
         {text: 'Клиент', value: 'customer'},
         {text: 'Тип клиента', value: 'customerType'},
       ],
-      filteredCustomerArr: [],
-      // filteredCustomer:[
-      //   {
-      //     customer: "",
-      //   },
-      //   {
-      //     customerType: "",
-      //   }
-      // ],
     }
   },
 
@@ -92,33 +83,50 @@ export default {
   async created() {
     try {
       const res = await this.$axios.get('http://api.goodfil.com/sales-test2/api/cities')
-      this.cities = res.data;
+      this.items = res.data;
     } catch (e) {
       console.error(e);
     }
   },
   computed: {
     filteredCities() {
-      return this.cities.filter(city => {
+      return this.items.filter(city => {
         return city.city.toUpperCase().match(this.search.toUpperCase())
       });
     },
-    filteredCustomer(){
-      return this.filteredCustomerArr.filter(customer => {
-        return customer.filteredCustomerArr.match(this.filteredCustomerString)
-      })
-    },
+  },
+
+  watch: {
+    async search(val) {
+      if (val && val.length >= 2 && val !== this.selectedProductCode)
+        this.querySelections(val);
+    }
   },
 
   methods: {
-    // filteredCustomer(city) {
-    //   this.filteredCustomer.push(city)
-    // }
+    querySelections(productCode) {
+      this.loading = true;
+      created.res(productCode)
+        .then(response => {
+            this.items = response.data;
+            this.loading = false;
+          }
+        );
+    },
+
+    async searchProducts(productCode) {
+      await this.$store.dispatch(productCode);
+      // this.$router.push("/");
+    },
+    async onSelectedProductCodeChange(e) {
+      await this.searchProducts(e);
+    },
+
   },
-  mounted() {
-    // this.customer = this.cities.customer
-    // this.customerType = this.cities.customerType
-  },
+  // mounted() {
+  //   this.customer = this.cities.customer
+  //   this.customerType = this.cities.customerType
+  // },
 
   // filteredCustomer() {
   //   return this.cities

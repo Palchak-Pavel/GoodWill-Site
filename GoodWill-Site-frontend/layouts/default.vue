@@ -28,7 +28,7 @@ import footerSite from "~/components/footerSite.vue";
 
 export default {
   head: {
-    title: 'Лояут',
+    title: 'Официальный сайт бренда GoodWill',
     meta: [
       {
         charset: 'utf-8'
