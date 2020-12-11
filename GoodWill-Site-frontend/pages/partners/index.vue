@@ -8,10 +8,12 @@
             mode="out-in"
             appear>
             <v-autocomplete
+              clearable
               outlined
-              v-model="search"
+              v-model="model"
               :items="filteredCities"
-              :loading="loading"
+              :loading="isloading"
+              :search-input.sync="searchInputSync"
               item-text="city"
               label="Город"
               @change="onSelectedProductCodeChange($event)"
@@ -56,9 +58,10 @@ export default {
   data() {
     return {
       model: null,
-      search: null,
+      search: "",
+      searchInputSync: null,
       selectedProductCode: "",
-      loading: false,
+      isloading: false,
       items: [],
 
       headers: [
@@ -97,7 +100,7 @@ export default {
   },
 
   watch: {
-    async search(val) {
+    async searchInputSync(val) {
       if (val && val.length >= 2 && val !== this.selectedProductCode)
         this.querySelections(val);
     }
@@ -105,17 +108,17 @@ export default {
 
   methods: {
     querySelections(productCode) {
-      this.loading = true;
+      this.isloading = true;
       created.res(productCode)
         .then(response => {
             this.items = response.data;
-            this.loading = false;
+            this.isloading = false;
           }
         );
     },
 
     async searchProducts(productCode) {
-      await this.$store.dispatch(productCode);
+      await this.items.dispatch(productCode);
       // this.$router.push("/");
     },
     async onSelectedProductCodeChange(e) {
