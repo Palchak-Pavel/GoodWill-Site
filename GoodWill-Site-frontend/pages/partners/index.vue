@@ -12,7 +12,7 @@
               outlined
               v-model="model"
               :items="filteredCities"
-              :loading="isloading"
+              :loading="loading"
               :search-input.sync="searchInputSync"
               item-text="city"
               label="Город"
@@ -61,7 +61,7 @@ export default {
       search: "",
       searchInputSync: null,
       selectedProductCode: "",
-      isloading: false,
+      loading: false,
       items: [],
 
       headers: [
@@ -108,11 +108,11 @@ export default {
 
   methods: {
     querySelections(productCode) {
-      this.isloading = true;
+      this.loading = true;
       created.res(productCode)
         .then(response => {
             this.items = response.data;
-            this.isloading = false;
+            this.loading = false;
           }
         );
     },
@@ -120,6 +120,7 @@ export default {
     async searchProducts(productCode) {
       await this.items.dispatch(productCode);
       // this.$router.push("/");
+      this.res.push("items")
     },
     async onSelectedProductCodeChange(e) {
       await this.searchProducts(e);
